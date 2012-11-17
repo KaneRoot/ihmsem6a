@@ -1,0 +1,38 @@
+Interfaces :
+	- ajout (3d, salle, horaire, durée, synopsis, réal, acteurs)
+		+ bouton valider, annuler, random
+	- modification (= ajout prérempli)
+	- affichage détails d'un film + ajout bouton modifier pour admin + supprimer
+	- de la liste des films (+ filtrage) version utilisateur et admin (modification + suppression)
+		Affichage :
+			+ nom
+			+ type
+			+ 3D
+			+ bouton réservation
+			+ bouton détails
+		Filtrage : 
+			+ type
+			+ horaire
+			+ 3D
+
+	- réservation
+		+ horaire
+		+ abonnement (carte de réduction, tarif)
+	- paiement (reçu)
+
+Classes :
+film + une pour chaque interface.
+
+utilisateur :
+	login
+	mot de passe
+film :
+Réservation : tarif de base, 3D, ...
+
+## Projet ++ 
+Salle : nb de places
+Planning : liste de salles
+
+Plus tard
+	- recherche
+	- affichage résultat de recherche
