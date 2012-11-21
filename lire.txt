@@ -1,0 +1,26 @@
+QFile db_file("path");
+
+if (!db_file.open())
+{
+	return NULL;
+}
+
+QTextStream flux(&db_file);
+QString genre,nom, ...;
+ while (!flux.attend())
+{
+	nom=flux.readline();
+}
+
+
+
+____________________________________________
+
+Table_widget *film_table;
+int n;
+for (int i=1;i<=n;i++)
+{
+	film_table->setItem(i,<indexcol>,<val>);
+}
+
+
