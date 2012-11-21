@@ -18,7 +18,6 @@ void Accueil::ouvreDialConnect()
 	ConnectionDial* connect=new ConnectionDial(this);
 	connect->setModal(true);
 	connect->show();
-	std::cout << "passer \n";
 }
 
 
