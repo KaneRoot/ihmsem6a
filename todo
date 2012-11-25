@@ -36,3 +36,10 @@ Planning : liste de salles
 Plus tard
 	- recherche
 	- affichage résultat de recherche
+
+créneaux : id;horraire
+planning : idfilm;idsalle;idcréneau;nb_réservations_effectuées
+users : login;mdp
+films : idfilm;nom;3d;type;synopsis;durée
+salles : idsalle;nb_places
+type : idtype;nom

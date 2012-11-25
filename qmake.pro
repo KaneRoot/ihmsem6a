@@ -1,5 +1,5 @@
 TEMPLATE = app
-TARGET = Accueil
+TARGET = ausdgdfpuc
 QT += core \
 	  gui
 HEADERS += accueil.h\
