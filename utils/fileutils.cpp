@@ -31,9 +31,9 @@ void FileUtils::init()
 	vector<string> * lines = getLines();
 	string tmp;
 	vector<string> fields;
-	while(! lines->empty())
+	for(int i(0) ; i < lines->size() ; i++)
 	{
-		tmp = lines->pop_front();
+		tmp = lines->at(i);
 
 		split( fields, tmp, is_any_of( ";" ) );
 		print(fields);
