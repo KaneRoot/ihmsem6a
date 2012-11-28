@@ -37,7 +37,7 @@ void FileUtils::init()
 	{
 		tmp = file_lines->at(i);
 		split( fields, tmp, is_any_of( ";" ) );
-		lines[i] = fields;
+		lines[lexical_cast<int>(fields.at(0))] = fields;
 	}
 
 	delete file_lines;
@@ -49,9 +49,29 @@ void FileUtils::init()
 
 string FileUtils::get(int id, int column)
 {
-	for( int i(0) ; i < lines.size() ; i++)
-		if( id == lexical_cast<int>( lines[i].at(0) ) )
-			return lines[i].at(column);
+	return (lines[id].size() == 0) ? string("-1") : lines[id].at(column);
+}
 
-	return NULL;
+void FileUtils::display()
+{
+	for(int i(0) ; i < lines.size() ; i++)
+		print(lines.at(i));
+}
+
+vector<string> FileUtils::add(vector<string> v)
+{
+	for(int i(0) ; ; i++)
+		if(lines[i].size() == 0)
+		{
+			ostringstream convert;
+			convert << i;
+			v.insert(v.begin(), convert.str() );
+			lines[i] = v;
+			return v;
+		}
+}
+
+void FileUtils::del(int id)
+{
+	lines[id].clear();
 }

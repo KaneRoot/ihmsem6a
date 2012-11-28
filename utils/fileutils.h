@@ -21,6 +21,9 @@ class FileUtils
 		
 		string get(int id, int column);
 		void init();
+		vector<string> add(vector<string>); // retourne le vecteur avec l'ID en première position
+		void del(int id);
+		void display();
 
 	private :
 		vector<string> * getLines();
