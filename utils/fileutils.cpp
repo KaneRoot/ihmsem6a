@@ -1,6 +1,7 @@
 #include "fileutils.h"
 
-//using namespace std;
+using namespace std;
+using namespace boost;
 
 FileUtils::FileUtils(string f) : filename(f)
 {
@@ -28,14 +29,29 @@ void print( vector <string> & v )
 
 void FileUtils::init()
 {
-	vector<string> * lines = getLines();
+	vector<string> * file_lines = getLines();
 	string tmp;
 	vector<string> fields;
-	for(int i(0) ; i < lines->size() ; i++)
-	{
-		tmp = lines->at(i);
 
+	for(int i(0) ; i < file_lines->size() ; i++)
+	{
+		tmp = file_lines->at(i);
 		split( fields, tmp, is_any_of( ";" ) );
-		print(fields);
+		lines[i] = fields;
 	}
+
+	delete file_lines;
+	/*
+	for(int i(lines.size() -1) ; i >= 0 ; i--)
+		print(lines[i]);
+	*/
+}
+
+string FileUtils::get(int id, int column)
+{
+	for( int i(0) ; i < lines.size() ; i++)
+		if( id == lexical_cast<int>( lines[i].at(0) ) )
+			return lines[i].at(column);
+
+	return NULL;
 }

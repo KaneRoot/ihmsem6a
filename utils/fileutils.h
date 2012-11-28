@@ -5,6 +5,9 @@
 #include <map>
 #include <iostream>
 #include <fstream>
+#include <string>
+
+#include <boost/lexical_cast.hpp>
 #include <boost/algorithm/string.hpp>
 
 using namespace std;
@@ -22,7 +25,7 @@ class FileUtils
 	private :
 		vector<string> * getLines();
 		string filename;
-		map<int, string> lines;
+		map<int, vector<string> > lines;
 		
 };
 
