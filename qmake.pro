@@ -6,12 +6,12 @@ HEADERS += ui/accueil.h\
 			ui/connection.h\
 			ui/frameClient.h\
 			ui/detailWidget.h
-SOURCES += ui/accueil.cpp \
-		 ui/connection.cpp \
+SOURCES += ui/accueil.cpp\
+		 ui/connection.cpp\
 		 ui/frameClient.cpp\
 		 ui/detailWidget.cpp\
 		 main.cpp
 FORMS += ui/accueil.ui\
 		 ui/connectionBox.ui\
 		 ui/frameClient.ui\
-		 ui/detailWidget.ui\
+		 ui/detailWidget.ui
