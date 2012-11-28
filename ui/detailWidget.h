@@ -5,6 +5,8 @@
 #include "film.h"
 #include "horaire.h"
 
+#include "ui_detailWidget.h"
+
 class DetailWidget:public QWidget, private Ui::detailWidget
 {
 	Q_OBJECT

@@ -1,6 +1,6 @@
 
 #include <QtGui>
-#include "accueil.h"
+#include "ui/accueil.h"
 
 int main(int argc, char** argv)
 {
