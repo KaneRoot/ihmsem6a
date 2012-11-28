@@ -75,3 +75,26 @@ void FileUtils::del(int id)
 {
 	lines[id].clear();
 }
+
+void FileUtils::set(int id, vector<string> v)
+{
+	del(id);
+	lines[id] = v;
+}
+
+void FileUtils::write()
+{
+	ofstream ofs;
+	ofs.open(filename.c_str());
+	for(int i(0) ; i < lines.size() ; i++)
+	{
+		for(int j(0) ; j < lines.at(i).size() ; j++)
+		{
+			ofs << lines.at(i).at(j);
+			if(j + 1 != lines.at(i).size())
+				ofs << ";";
+		}
+		ofs << endl;
+	}
+	ofs.close();
+}

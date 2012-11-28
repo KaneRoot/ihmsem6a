@@ -24,6 +24,8 @@ class FileUtils
 		vector<string> add(vector<string>); // retourne le vecteur avec l'ID en première position
 		void del(int id);
 		void display();
+		void set(int id, vector<string> v);
+		void write(); // écrire tout ça dans le fichier
 
 	private :
 		vector<string> * getLines();
