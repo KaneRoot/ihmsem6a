@@ -1,7 +1,6 @@
 
 #include "detailWidget.h"
 
-
 DetailWidget::DetailWidget(QWidget* parent=0):QWidget(parent),Ui::detailWidget()
 {
 	setupUi(this);	
@@ -10,7 +9,7 @@ DetailWidget::DetailWidget(QWidget* parent=0):QWidget(parent),Ui::detailWidget()
 DetailWidget::~DetailWidget()
 {}
 
-DetailWidget::load(Film f)
+void DetailWidget::load(Film f)
 {
 	labelTitle.setText(f.getName());
 	plainTextSynopsis.setText(f.getSynopsis());
@@ -20,8 +19,16 @@ DetailWidget::load(Film f)
 	for (int i=0;i<horaire.size())
 	{
 		horaire = new Horaire(liste.at(i));
-		cbBxHoraire.addItem(horaire.getString);
+		cbBxHoraire.addItem(horaire.getString());
 	}
 	*/
 }
+
+void DetailWidget::retour()
+{
+	// TODO}
+}
+
+
+
 

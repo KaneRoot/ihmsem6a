@@ -5,6 +5,7 @@
 #include "film.h"
 #include "horaire.h"
 
+#include "ui_detailWidget.h"
 
 class DetailWidget:public QWidget, private Ui::detailWidget
 {
@@ -15,7 +16,6 @@ class DetailWidget:public QWidget, private Ui::detailWidget
 		void load(Film f);
 	private:
 		Film film;
-		setDetail();
 	private slots:
 		void retour();
 };

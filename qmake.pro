@@ -2,10 +2,16 @@ TEMPLATE = app
 TARGET = ausdgdfpuc
 QT += core \
 	  gui
-HEADERS += accueil.h\
-			connection.h
-SOURCES += accueil.cpp \
-		 connection.cpp \
+HEADERS += ui/accueil.h\
+			ui/connection.h\
+			ui/frameClient.h\
+			ui/detailWidget.h
+SOURCES += ui/accueil.cpp\
+		 ui/connection.cpp\
+		 ui/frameClient.cpp\
+		 ui/detailWidget.cpp\
 		 main.cpp
-FORMS += accueil.ui\
-		 connectionBox.ui
+FORMS += ui/accueil.ui\
+		 ui/connectionBox.ui\
+		 ui/frameClient.ui\
+		 ui/detailWidget.ui
