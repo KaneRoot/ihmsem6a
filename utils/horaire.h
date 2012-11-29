@@ -1,6 +1,8 @@
 #ifndef __HORAIRE_H__
 #define __HORAIRE_H__
 
+#define HORAIRES_FILE_NAME "../data/creneaux"
+
 #include <vector>
 #include <iostream>
 #include "fileutils.h"
@@ -11,10 +13,12 @@ class Horaire
 {
 	public :	
 		static string getHoraire(int id);
+		static void init();
 
 	private :
-		static vector<string> horaires;
+		static FileUtils * horaires;
 };
+
 
 #endif
 
