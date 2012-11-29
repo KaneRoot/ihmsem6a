@@ -39,12 +39,13 @@ class Film
 		
 		void setName(string name);
 		void set3d(bool is3d);
-		void setTypeId();
+		void setTypeId(int idType);
 		void setBasePrice(int base_price);
 		void setSynopsis(string s);
 		void setActors(vector<string> actors);
 		void setActors(string actors);
 		void setHoraires(vector<int> h);
+		void setHoraires(string h);
 
 	private :
 		static FileUtils * fu;

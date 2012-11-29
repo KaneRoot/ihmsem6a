@@ -85,23 +85,49 @@ void Film::setName(string name)
 
 void Film::set3d(bool is3d)
 {
-	film_construct[MOVIE_3D_ID] = lexical_cast<string>(is3d);
+	film_construct[lexical_cast<int>(MOVIE_3D_ID)] = lexical_cast<string>(is3d);
 }
-void Film::setTypeId()
+
+void Film::setTypeId(int idType)
 {
+	film_construct[lexical_cast<int>(MOVIE_TYPE_ID)] = lexical_cast<string>(idType);
 }
+
 void Film::setBasePrice(int base_price)
 {
+	film_construct[lexical_cast<int>(MOVIE_BASE_PRICE_ID)] = lexical_cast<string>(base_price);
 }
+
 void Film::setSynopsis(string s)
 {
+	film_construct[lexical_cast<int>(MOVIE_SYNOPSIS_ID)].insert(0, s);
 }
+
 void Film::setActors(vector<string> actors)
 {
+	ostringstream stream;
+	for(int i(0) ; i < actors.size() ; i++)
+	{
+		stream << actors.at(i) << "::";
+	}
+	setActors(stream.str());
 }
+
 void Film::setActors(string actors)
 {
+	film_construct[lexical_cast<int>(MOVIE_ACTORS_ID)].insert(0, actors);
 }
+
 void Film::setHoraires(vector<int> h)
 {
+	ostringstream stream;
+	for(int i(0) ; i < h.size() ; i++)
+	{
+		stream << h.at(i) << "-";
+	}
+	setHoraires(stream.str());
+}
+void Film::setHoraires(string h)
+{
+	film_construct[lexical_cast<int>(MOVIE_HORAIRES_ID)].insert(0, h);
 }
