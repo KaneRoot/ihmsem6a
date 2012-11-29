@@ -49,6 +49,8 @@ class Film
 		void setHoraires(string h);
 		void setRealisator(string realisator);
 
+		void save();
+
 	private :
 		static FileUtils * fu;
 		int id;

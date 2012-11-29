@@ -5,6 +5,16 @@ using namespace boost;
 
 FileUtils * Film::fu = NULL;
 
+Film::Film() : id(-1)
+{
+	string f(MOVIE_FILE_NAME);
+	if(fu == NULL)
+	{
+		Film::fu = new FileUtils(f) ;
+		Film::fu->init();
+	}
+}
+
 Film::Film(int ident) : id(ident)
 {
 	string f(MOVIE_FILE_NAME);
@@ -86,7 +96,10 @@ string Film::getRealisator()
 /**	SETTERS **/
 void Film::setName(string name)
 {
-	film_construct[lexical_cast<int>(MOVIE_NAME_ID)].insert(0, name);
+	if(id == -1)
+		film_construct[lexical_cast<int>(MOVIE_NAME_ID)].insert(0, name);
+	else
+		Film::fu->set(id, MOVIE_NAME_ID, name);
 }
 
 void Film::set3d(bool is3d)
@@ -142,4 +155,9 @@ void Film::setHoraires(vector<int> h)
 void Film::setHoraires(string h)
 {
 	film_construct[lexical_cast<int>(MOVIE_HORAIRES_ID)].insert(0, h);
+}
+
+void Film::save()
+{
+	Film::fu->write();
 }
