@@ -4,19 +4,20 @@
 #include "detailWidget.h"
 #include "listeWidget.h"
 
+#include <QFrame>
 #include "ui_frameClient.h"
 
-class FrameClient: public QFrame,private Ui::frameClient
+class FrameClient: public QFrame,private Ui::FormClient
 {
 	Q_OBJECT
 	public:
-		FrameClient(QWidqet* parent=0);
+		FrameClient(QWidget* parent=0);
 		~FrameClient();
 	private:
-		DetailWidget detail;
+		DetailWidget* detail;
 		//ListeWidget liste;
 		void displayDetail(int id);
-		void displaytListe();
+		void displayList();
 	private slots:
 		// TODO Fonction lorsqu'on clique sur un film
 		// TODO Fonction pour retourner sur la liste

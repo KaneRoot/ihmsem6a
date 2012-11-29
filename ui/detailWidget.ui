@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>581</width>
-    <height>440</height>
+    <width>714</width>
+    <height>478</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -16,9 +16,9 @@
   <widget class="QPushButton" name="btn_back">
    <property name="geometry">
     <rect>
-     <x>150</x>
-     <y>390</y>
-     <width>401</width>
+     <x>460</x>
+     <y>430</y>
+     <width>201</width>
      <height>24</height>
     </rect>
    </property>
@@ -30,10 +30,13 @@
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>100</y>
-     <width>401</width>
-     <height>141</height>
+     <y>140</y>
+     <width>511</width>
+     <height>211</height>
     </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QLabel" name="labelTitle">
@@ -41,7 +44,7 @@
     <rect>
      <x>20</x>
      <y>10</y>
-     <width>531</width>
+     <width>671</width>
      <height>31</height>
     </rect>
    </property>
@@ -71,7 +74,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>100</y>
+     <y>140</y>
      <width>91</width>
      <height>16</height>
     </rect>
@@ -94,8 +97,8 @@
    <property name="geometry">
     <rect>
      <x>150</x>
-     <y>340</y>
-     <width>191</width>
+     <y>390</y>
+     <width>291</width>
      <height>25</height>
     </rect>
    </property>
@@ -104,7 +107,7 @@
    <property name="geometry">
     <rect>
      <x>30</x>
-     <y>340</y>
+     <y>390</y>
      <width>81</width>
      <height>16</height>
     </rect>
@@ -126,14 +129,50 @@
   <widget class="QPushButton" name="btnReserver">
    <property name="geometry">
     <rect>
-     <x>350</x>
-     <y>340</y>
+     <x>460</x>
+     <y>390</y>
      <width>201</width>
      <height>24</height>
     </rect>
    </property>
    <property name="text">
     <string>Réserver</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelCasting">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>80</y>
+     <width>91</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <weight>75</weight>
+     <bold>true</bold>
+     <underline>true</underline>
+    </font>
+   </property>
+   <property name="text">
+    <string>Casting :</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPlainTextEdit" name="plainTextEdit">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>80</y>
+     <width>511</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="readOnly">
+    <bool>true</bool>
    </property>
   </widget>
  </widget>
