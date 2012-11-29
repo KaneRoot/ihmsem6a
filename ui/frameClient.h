@@ -15,7 +15,7 @@ class FrameClient: public QFrame,private Ui::FormClient
 		~FrameClient();
 	private:
 		DetailWidget* detail;
-		//ListeWidget liste;
+		//ListeWidget* liste;
 		void displayDetail(int id);
 		void displayList();
 	private slots:
