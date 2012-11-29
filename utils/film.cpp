@@ -104,22 +104,34 @@ void Film::setName(string name)
 
 void Film::set3d(bool is3d)
 {
-	film_construct[lexical_cast<int>(MOVIE_3D_ID)] = lexical_cast<string>(is3d);
+	if(id == -1)
+		film_construct[lexical_cast<int>(MOVIE_3D_ID)] = lexical_cast<string>(is3d);
+	else
+		Film::fu->set(id, MOVIE_3D_ID, lexical_cast<string>(is3d));
 }
 
 void Film::setTypeId(int idType)
 {
-	film_construct[lexical_cast<int>(MOVIE_TYPE_ID)] = lexical_cast<string>(idType);
+	if(id == -1)
+		film_construct[lexical_cast<int>(MOVIE_TYPE_ID)] = lexical_cast<string>(idType);
+	else
+		Film::fu->set(id, MOVIE_TYPE_ID, lexical_cast<string>(idType));
 }
 
 void Film::setBasePrice(int base_price)
 {
-	film_construct[lexical_cast<int>(MOVIE_BASE_PRICE_ID)] = lexical_cast<string>(base_price);
+	if(id == -1)
+		film_construct[lexical_cast<int>(MOVIE_BASE_PRICE_ID)] = lexical_cast<string>(base_price);
+	else
+		Film::fu->set(id, MOVIE_BASE_PRICE_ID, lexical_cast<string>(base_price));
 }
 
 void Film::setSynopsis(string s)
 {
-	film_construct[lexical_cast<int>(MOVIE_SYNOPSIS_ID)].insert(0, s);
+	if(id == -1)
+		film_construct[lexical_cast<int>(MOVIE_SYNOPSIS_ID)].insert(0, s);
+	else
+		Film::fu->set(id, MOVIE_SYNOPSIS_ID, s);
 }
 
 void Film::setActors(vector<string> actors)
@@ -134,12 +146,18 @@ void Film::setActors(vector<string> actors)
 
 void Film::setActors(string actors)
 {
-	film_construct[lexical_cast<int>(MOVIE_ACTORS_ID)].insert(0, actors);
+	if(id == -1)
+		film_construct[lexical_cast<int>(MOVIE_ACTORS_ID)].insert(0, actors);
+	else
+		Film::fu->set(id, MOVIE_ACTORS_ID, actors);
 }
 
 void Film::setRealisator(string realisator)
 {
-	film_construct[lexical_cast<int>(MOVIE_REAL_ID)].insert(0, realisator);
+	if(id == -1)
+		film_construct[lexical_cast<int>(MOVIE_REAL_ID)].insert(0, realisator);
+	else
+		Film::fu->set(id, MOVIE_REAL_ID, realisator);
 }
 
 void Film::setHoraires(vector<int> h)
@@ -154,7 +172,10 @@ void Film::setHoraires(vector<int> h)
 
 void Film::setHoraires(string h)
 {
-	film_construct[lexical_cast<int>(MOVIE_HORAIRES_ID)].insert(0, h);
+	if(id == -1)
+		film_construct[lexical_cast<int>(MOVIE_HORAIRES_ID)].insert(0, h);
+	else
+		Film::fu->set(id, MOVIE_HORAIRES_ID, h);
 }
 
 void Film::save()
