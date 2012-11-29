@@ -83,6 +83,11 @@ void FileUtils::set(int id, vector<string> v)
 	lines[id] = v;
 }
 
+void FileUtils::set(int id, int column, string s)
+{
+	lines[id][column] = s;
+}
+
 void FileUtils::write()
 {
 	ofstream ofs;

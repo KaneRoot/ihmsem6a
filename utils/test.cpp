@@ -20,7 +20,7 @@ void file_utils()
 
 void film_test()
 {
-	Film film(2);
+	Film film(3);
 	cout << "Film name : " << film.getName() << endl;
 	if(film.is3d())
 		cout << "Film en 3D" << endl;
@@ -40,6 +40,9 @@ void film_test()
 	cout << endl;
 
 	cout << " En une seule ligne : " << film.getActorsString() << endl;
+	film.setName(string("Coucou"));
+	cout << "Film name : " << film.getName() << endl;
+	film.save();
 }
 
 int main(int argc, char **argv)

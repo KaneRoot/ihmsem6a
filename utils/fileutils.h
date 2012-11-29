@@ -25,6 +25,7 @@ class FileUtils
 		void del(int id);
 		void display();
 		void set(int id, vector<string> v);
+		void set(int id, int column, string s);
 		void write(); // écrire tout ça dans le fichier
 
 	private :

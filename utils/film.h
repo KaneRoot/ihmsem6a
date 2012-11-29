@@ -36,6 +36,7 @@ class Film
 		vector<string> getActors();
 		string getActorsString();
 		vector<int> getHoraires();
+		string getRealisator();
 		
 		void setName(string name);
 		void set3d(bool is3d);
@@ -46,6 +47,9 @@ class Film
 		void setActors(string actors);
 		void setHoraires(vector<int> h);
 		void setHoraires(string h);
+		void setRealisator(string realisator);
+
+		void save();
 
 	private :
 		static FileUtils * fu;
