@@ -1,7 +1,7 @@
 
 #include "detailWidget.h"
 
-DetailWidget::DetailWidget(QWidget* parent=0):QWidget(parent),Ui::detailWidget()
+DetailWidget::DetailWidget(QWidget* parent):QWidget(parent),Ui::DetailForm()
 {
 	setupUi(this);	
 }
@@ -9,10 +9,10 @@ DetailWidget::DetailWidget(QWidget* parent=0):QWidget(parent),Ui::detailWidget()
 DetailWidget::~DetailWidget()
 {}
 
-void DetailWidget::load(Film f)
-{
-	labelTitle.setText(f.getName());
-	plainTextSynopsis.setText(f.getSynopsis());
+//void DetailWidget::load(Film f)
+//{
+	//labelTitle.setText(f.getName());
+	//plainTextSynopsis.setText(f.getSynopsis());
 	/*
 	vector<int> liste = f.getHoraires();
 	Horaire horaire;
@@ -22,7 +22,7 @@ void DetailWidget::load(Film f)
 		cbBxHoraire.addItem(horaire.getString());
 	}
 	*/
-}
+//}
 
 void DetailWidget::retour()
 {

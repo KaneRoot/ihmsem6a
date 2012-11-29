@@ -6,6 +6,7 @@
 
 #include "ui_accueil.h"
 #include "connection.h"
+#include "frameClient.h"
 
 class Accueil:public QMainWindow, private Ui::AccueilWindow
 {
@@ -15,6 +16,7 @@ class Accueil:public QMainWindow, private Ui::AccueilWindow
 		~Accueil();
 	private slots:
 		void ouvreDialConnect();
+		void ouvreFrameClient();
 };
 
 #endif
