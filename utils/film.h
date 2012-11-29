@@ -1,8 +1,12 @@
 #ifndef __FILM_H__
 #define __FILM_H__
 
+#define MOVIE_FILE_NAME "./films"
+
 #include <vector>
 #include <iostream>
+
+#include "fileutils.h"
 
 using namespace std;
 
@@ -33,7 +37,7 @@ class Film
 		void setHoraires(vector<int> h);
 
 	private :
-
+		static FileUtils * fu;
 };
 
 #endif

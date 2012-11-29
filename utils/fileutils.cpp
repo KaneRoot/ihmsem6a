@@ -37,7 +37,8 @@ void FileUtils::init()
 	{
 		tmp = file_lines->at(i);
 		split( fields, tmp, is_any_of( ";" ) );
-		lines[lexical_cast<int>(fields.at(0))] = fields;
+		if(fields.size() > 1)
+			lines[lexical_cast<int>(fields.at(0))] = fields;
 	}
 
 	delete file_lines;
@@ -88,13 +89,16 @@ void FileUtils::write()
 	ofs.open(filename.c_str());
 	for(int i(0) ; i < lines.size() ; i++)
 	{
-		for(int j(0) ; j < lines.at(i).size() ; j++)
+		if(lines.at(i).size() > 1)
 		{
-			ofs << lines.at(i).at(j);
-			if(j + 1 != lines.at(i).size())
-				ofs << ";";
+			for(int j(0) ; j < lines.at(i).size() ; j++)
+			{
+				ofs << lines.at(i).at(j);
+				if(j + 1 != lines.at(i).size())
+					ofs << ";";
+			}
+			ofs << endl;
 		}
-		ofs << endl;
 	}
 	ofs.close();
 }
