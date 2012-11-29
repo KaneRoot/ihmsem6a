@@ -17,7 +17,7 @@ Film::Film(int ident) : id(ident)
 
 Film::~Film() { }
 
-
+/**	GETTERS **/
 string Film::getName()
 {
 	return Film::fu->get(id, MOVIE_NAME_ID);
@@ -78,6 +78,12 @@ vector<int> Film::getHoraires()
 	return horaires;
 }
 
+string Film::getRealisator()
+{
+	return Film::fu->get(id, MOVIE_REAL_ID);
+}
+
+/**	SETTERS **/
 void Film::setName(string name)
 {
 	film_construct[lexical_cast<int>(MOVIE_NAME_ID)].insert(0, name);
@@ -118,6 +124,11 @@ void Film::setActors(string actors)
 	film_construct[lexical_cast<int>(MOVIE_ACTORS_ID)].insert(0, actors);
 }
 
+void Film::setRealisator(string realisator)
+{
+	film_construct[lexical_cast<int>(MOVIE_REAL_ID)].insert(0, realisator);
+}
+
 void Film::setHoraires(vector<int> h)
 {
 	ostringstream stream;
@@ -127,6 +138,7 @@ void Film::setHoraires(vector<int> h)
 	}
 	setHoraires(stream.str());
 }
+
 void Film::setHoraires(string h)
 {
 	film_construct[lexical_cast<int>(MOVIE_HORAIRES_ID)].insert(0, h);
