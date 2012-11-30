@@ -1,5 +1,5 @@
 CC = g++
-OPTIONS = 
+OPTIONS = -wall
 ARCHIVE = pittoli_hett
 PROG = main
 VALGRIND_OPTIONS = --leak-check=full -v

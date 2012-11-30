@@ -2,7 +2,7 @@
 #ifndef __DETAILWIDGET__
 #define __DETAILWIDGET__
 
-//#include "../utils/film.h"
+#include "../utils/film.h"
 //#include "../utils/horaire.h"
 
 
@@ -16,9 +16,9 @@ class DetailWidget : public QWidget, private Ui::DetailForm
 	public:
 		DetailWidget(QWidget* parent=0);
 		~DetailWidget();
-		//void load(Film f);
+		void load(Film* f);
 	private:
-		//Film film;
+		Film film;
 	private slots:
 		void retour();
 };
