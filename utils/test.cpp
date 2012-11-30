@@ -20,7 +20,7 @@ void file_utils()
 
 void film_test()
 {
-	Film film(3);
+	Film film(1);
 	cout << "Film name : " << film.getName() << endl;
 	if(film.is3d())
 		cout << "Film en 3D" << endl;
@@ -44,9 +44,18 @@ void film_test()
 	cout << "Film name : " << film.getName() << endl;
 	film.save();
 }
+void get_films()
+{
+	vector<Film> films = Film::getFilms();
+	vector<Film>::iterator it;
+	for( it=films.begin() ; it != films.end(); it++ )
+		cout << "Nom : " << (*it).getName() << endl;
+
+}
 
 int main(int argc, char **argv)
 {
 	//file_utils();
-	film_test();
+	//film_test();
+	get_films();
 }

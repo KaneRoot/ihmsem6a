@@ -7,9 +7,9 @@ FileUtils * Film::fu = NULL;
 
 Film::Film() : id(-1)
 {
-	string f(MOVIE_FILE_NAME);
 	if(fu == NULL)
 	{
+		string f(MOVIE_FILE_NAME);
 		Film::fu = new FileUtils(f) ;
 		Film::fu->init();
 	}
@@ -17,12 +17,28 @@ Film::Film() : id(-1)
 
 Film::Film(int ident) : id(ident)
 {
-	string f(MOVIE_FILE_NAME);
 	if(fu == NULL)
 	{
+		string f(MOVIE_FILE_NAME);
 		Film::fu = new FileUtils(f) ;
 		Film::fu->init();
 	}
+}
+
+vector<Film> Film::getFilms()
+{
+	if(fu == NULL)
+	{
+		string f(MOVIE_FILE_NAME);
+		Film::fu = new FileUtils(f) ;
+		Film::fu->init();
+	}
+	vector<Film> films;
+	vector<int> identifiants = Film::fu->getIDs();
+	for(int i(0) ; i < identifiants.size() ; i++)
+		films.push_back(Film(identifiants[i]));
+
+	return films;
 }
 
 Film::~Film() { }

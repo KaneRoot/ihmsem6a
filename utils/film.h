@@ -49,6 +49,8 @@ class Film
 		void setHoraires(string h);
 		void setRealisator(string realisator);
 
+		static vector<Film> getFilms();
+
 		void save();
 
 	private :

@@ -38,7 +38,11 @@ void FileUtils::init()
 		tmp = file_lines->at(i);
 		split( fields, tmp, is_any_of( ";" ) );
 		if(fields.size() > 1)
-			lines[lexical_cast<int>(fields.at(0))] = fields;
+		{
+			try {
+				lines[lexical_cast<int>(fields.at(0))] = fields;
+			} catch ( std::exception& ex ) { }
+		}
 	}
 
 	delete file_lines;
@@ -51,6 +55,16 @@ void FileUtils::init()
 string FileUtils::get(int id, int column)
 {
 	return (lines[id].size() == 0) ? string("-1") : lines[id].at(column);
+}
+
+vector<int> FileUtils::getIDs()
+{
+	vector<int> res;
+	map<int, vector<string> >::iterator it;
+	for ( it=lines.begin() ; it != lines.end(); it++ )
+		res.push_back(it->first);
+	
+	return res;
 }
 
 void FileUtils::display()

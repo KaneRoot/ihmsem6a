@@ -28,6 +28,8 @@ class FileUtils
 		void set(int id, int column, string s);
 		void write(); // écrire tout ça dans le fichier
 
+		vector<int> getIDs();
+
 	private :
 		vector<string> * getLines();
 		string filename;
