@@ -4,29 +4,43 @@
 DetailWidget::DetailWidget(QWidget* parent):QWidget(parent),Ui::DetailForm()
 {
 	setupUi(this);	
+
+	QObject::connect(btn_back,SIGNAL(clicked()),
+			this,SLOT(retour()));
 }
 
 DetailWidget::~DetailWidget()
 {}
 
-void DetailWidget::load(Film* f)
+void DetailWidget::load(int i)//(Film* f)
 {
-	//labelTitle->setText(f->getName());
-	//plainTextSynopsis->setText(f->getSynopsis());
+	Film *f = new Film(i);
+	labelTitle->setText((QString)f->getName().c_str());
+	textSynopsis->setText((QString)f->getSynopsis().c_str());
+	string casting = "";
+
 	
-/*	vector<int> liste = f.getHoraires();
-	Horaire horaire;
-	for (int i=0;i<horaire.size())
+	vector<int> liste = f->getHoraires();
+	vector<int>::iterator it;
+	//QString& horaire_str=new QString;
+	for (it=liste.begin();it!=liste.end();it++)
 	{
-		horaire = new Horaire(liste.at(i));
-		cbBxHoraire.addItem(horaire.getString());
+	//	horaire_str=Horaire::getHoraire(*it).c_str();
+		cbBxHoraire->addItem("",
+				QVariant(*it));
 	}	
-*/
+}
+
+
+void DetailWidget::setBrother(QWidget* bro)
+{
+	brother=bro;
 }
 
 void DetailWidget::retour()
 {
-	// TODO}
+	brother->setVisible(true);
+	this->setVisible(false);
 }
 
 
