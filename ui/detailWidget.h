@@ -16,7 +16,7 @@ class DetailWidget : public QWidget, private Ui::DetailForm
 	public:
 		DetailWidget(QWidget* parent=0);
 		~DetailWidget();
-		void load(Film* f);
+		void load(int i);//(Film* f);
 	private:
 		Film film;
 	private slots:

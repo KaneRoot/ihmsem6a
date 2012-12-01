@@ -7,7 +7,7 @@
 
 #include "fileutils.h"
 
-#define MOVIE_FILE_NAME		"./films"
+#define MOVIE_FILE_NAME		"./data/films"
 #define MOVIE_NAME_ID		1
 #define MOVIE_TYPE_ID		2
 #define MOVIE_3D_ID			3

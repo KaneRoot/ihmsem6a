@@ -9,24 +9,23 @@ DetailWidget::DetailWidget(QWidget* parent):QWidget(parent),Ui::DetailForm()
 DetailWidget::~DetailWidget()
 {}
 
-void DetailWidget::load(Film* f)
+void DetailWidget::load(int i)//(Film* f)
 {
-	//labelTitle->setText(f->getName());
-	//plainTextSynopsis->setText(f->getSynopsis());
-	
-/*	vector<int> liste = f.getHoraires();
-	Horaire horaire;
-	for (int i=0;i<horaire.size())
-	{
-		horaire = new Horaire(liste.at(i));
-		cbBxHoraire.addItem(horaire.getString());
-	}	
-*/
+	Film *f = new Film(i);
+	labelTitle->setText((QString)f->getName().c_str());
+	textSynopsis->setText((QString)f->getSynopsis().c_str());	
+	//vector<int> liste = f.getHoraires();
+	//Horaire horaire;
+	//for (int i=0;i<horaire.size();i++)
+	//{
+	//	horaire = new Horaire(liste.at(i));
+	//	cbBxHoraire.addItem(horaire.getString());
+	//}	
 }
 
 void DetailWidget::retour()
 {
-	// TODO}
+	// TODO
 }
 
 
