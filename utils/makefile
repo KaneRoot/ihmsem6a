@@ -6,10 +6,10 @@ VALGRIND_OPTIONS = --leak-check=full -v
 
 all : $(PROG)
 
-$(PROG) : horaire.o film.o fileutils.o test.o 
-	$(CC) -o $(PROG) horaire.o film.o fileutils.o test.o $(OPTIONS)
+$(PROG) : type.o horaire.o film.o fileutils.o test.o 
+	$(CC) -o $(PROG) type.o horaire.o film.o fileutils.o test.o $(OPTIONS)
 
-%.o : %.cpp
+%.o : %.cpp %.h
 	$(CC) -o $@ -c $< $(OPTIONS)
 
 

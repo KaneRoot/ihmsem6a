@@ -33,7 +33,7 @@ void FileUtils::init()
 	string tmp;
 	vector<string> fields;
 
-	for(int i(0) ; i < file_lines->size() ; i++)
+	for(unsigned int i(0) ; i < file_lines->size() ; i++)
 	{
 		tmp = file_lines->at(i);
 		split( fields, tmp, is_any_of( ";" ) );
@@ -69,7 +69,7 @@ vector<int> FileUtils::getIDs()
 
 void FileUtils::display()
 {
-	for(int i(0) ; i < lines.size() ; i++)
+	for(unsigned int i(0) ; i < lines.size() ; i++)
 		print(lines.at(i));
 }
 
@@ -106,14 +106,14 @@ void FileUtils::write()
 {
 	ofstream ofs;
 	ofs.open(filename.c_str());
-	for(int i(0) ; i < lines.size() ; i++)
+	for(unsigned int i(0) ; i < lines.size() ; i++)
 	{
 		if(lines.at(i).size() > 1)
 		{
-			for(int j(0) ; j < lines.at(i).size() ; j++)
+			for(unsigned int j(0) ; j < lines.at(i).size() ; j++)
 			{
 				ofs << lines.at(i).at(j);
-				if(j + 1 != lines.at(i).size())
+				if(((unsigned int)j + 1) != lines.at(i).size())
 					ofs << ";";
 			}
 			ofs << endl;
