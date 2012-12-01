@@ -4,6 +4,7 @@
 
 #include "../utils/film.h"
 
+#include <QGridLayout>
 #include <iostream>
 
 #include "detailWidget.h"
