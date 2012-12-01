@@ -35,7 +35,7 @@ vector<Film> Film::getFilms()
 	}
 	vector<Film> films;
 	vector<int> identifiants = Film::fu->getIDs();
-	for(int i(0) ; i < identifiants.size() ; i++)
+	for(unsigned int i(0) ; i < identifiants.size() ; i++)
 		films.push_back(Film(identifiants[i]));
 
 	return films;
@@ -59,9 +59,11 @@ int Film::getTypeId()
 	return lexical_cast<int>(Film::fu->get(id, MOVIE_TYPE_ID));
 }
 
-string Film::getTypeName() // TODO
+string Film::getTypeName()
 {
-	return Film::fu->get(id, MOVIE_TYPE_ID);
+	int type_id = getTypeId();
+	Type::init();
+	return Type::getType(type_id);
 }
 
 int Film::getBasePrice()
@@ -86,7 +88,7 @@ string Film::getActorsString()
 {
 	ostringstream stream;
 	vector<string> actors = getActors();
-	for(int i(0) ; i < actors.size() ; i++)
+	for(unsigned int i(0) ; i < actors.size() ; i++)
 		stream << actors.at(i) << " " ;
 	return stream.str();
 }
@@ -98,7 +100,7 @@ vector<int> Film::getHoraires()
 
 	string tmp(Film::fu->get(id, MOVIE_HORAIRES_ID));
 	split( fields, tmp, is_any_of( "-" ) );
-	for(int i(0) ; i < fields.size() ; i++)
+	for(unsigned int i(0) ; i < fields.size() ; i++)
 		horaires.push_back(lexical_cast<int>(fields.at(i)));
 
 	return horaires;
@@ -153,7 +155,7 @@ void Film::setSynopsis(string s)
 void Film::setActors(vector<string> actors)
 {
 	ostringstream stream;
-	for(int i(0) ; i < actors.size() ; i++)
+	for(unsigned int i(0) ; i < actors.size() ; i++)
 	{
 		stream << actors.at(i) << "::";
 	}
@@ -179,7 +181,7 @@ void Film::setRealisator(string realisator)
 void Film::setHoraires(vector<int> h)
 {
 	ostringstream stream;
-	for(int i(0) ; i < h.size() ; i++)
+	for(unsigned int i(0) ; i < h.size() ; i++)
 	{
 		stream << h.at(i) << "-";
 	}

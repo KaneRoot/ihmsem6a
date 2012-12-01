@@ -1,5 +1,7 @@
 #include "fileutils.h"
 #include "film.h"
+#include "horaire.h"
+#include "user.h"
 
 using namespace std;
 
@@ -30,12 +32,12 @@ void film_test()
 	cout << "Film synopsis : " << film.getSynopsis() << endl;
 	cout << "Horaires : ";
 	vector<int> horaires(film.getHoraires());
-	for(int i(0) ; i < horaires.size() ; i++)
+	for(unsigned int i(0) ; i < horaires.size() ; i++)
 		cout << horaires.at(i) << " ";
 	cout << endl;
 
 	vector<string> actors(film.getActors());
-	for(int i(0) ; i < actors.size() ; i++)
+	for(unsigned int i(0) ; i < actors.size() ; i++)
 		cout << actors.at(i) << " ";
 	cout << endl;
 
@@ -49,13 +51,26 @@ void get_films()
 	vector<Film> films = Film::getFilms();
 	vector<Film>::iterator it;
 	for( it=films.begin() ; it != films.end(); it++ )
+	{
 		cout << "Nom : " << (*it).getName() << endl;
+		cout << "Type : " << (*it).getTypeName() << " :: " << it->getTypeId() << endl;
+	}
+	
+}
 
+void utilisateurs()
+{
+	User::init();
+	if(User::isRealUser(string("moi"), string("toi")))
+		cout << "Ça mARCHe" << endl;
+	else
+		cout << "Ça mARCHe PAS" << endl;
 }
 
 int main(int argc, char **argv)
 {
 	//file_utils();
 	//film_test();
-	get_films();
+	//get_films();
+	utilisateurs();
 }
