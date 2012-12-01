@@ -3,6 +3,7 @@ TARGET = ausdgdfpuc
 QT += core \
 	  gui
 HEADERS += utils/fileutils.h\
+			utils/type.h\
 			utils/film.h\
 			ui/accueil.h\
 			ui/connection.h\
@@ -11,6 +12,7 @@ HEADERS += utils/fileutils.h\
 			ui/detailWidget.h\
 			ui/listeWidget.h
 SOURCES += utils/fileutils.cpp\
+			utils/type.cpp\
 			utils/film.cpp\
 			ui/accueil.cpp\
 		 	ui/connection.cpp\

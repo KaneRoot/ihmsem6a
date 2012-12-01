@@ -17,11 +17,11 @@ class ListeWidget: public QWidget, private Ui::ListeForm
 		~ListeWidget();
 		void load();
 	private:
-		vector<QPushButton> boutons;
+		vector<QPushButton*> boutons;
 		vector<Film> films;
 		DetailWidget* detail;
 	private slots:
-		void showDetail(int i);
+		void showDetail();
 };
 
 #endif

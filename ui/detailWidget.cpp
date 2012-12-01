@@ -13,7 +13,7 @@ void DetailWidget::load(int i)//(Film* f)
 {
 	Film *f = new Film(i);
 	labelTitle->setText((QString)f->getName().c_str());
-	textSynopsis->setText((QString)f->getSynopsis().c_str());	
+	textSynopsis->setText((QString)f->getSynopsis().c_str());		
 	//vector<int> liste = f.getHoraires();
 	//Horaire horaire;
 	//for (int i=0;i<horaire.size();i++)
