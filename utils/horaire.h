@@ -12,13 +12,11 @@ using namespace std;
 class Horaire
 {
 	public :	
-		static string getHoraire(int id);
 		static void init();
+		static string getHoraire(int id);
 
 	private :
 		static FileUtils * horaires;
 };
 
-
 #endif
-

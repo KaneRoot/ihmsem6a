@@ -1,5 +1,7 @@
 #include "fileutils.h"
 #include "film.h"
+#include "horaire.h"
+#include "user.h"
 
 using namespace std;
 
@@ -56,9 +58,19 @@ void get_films()
 	
 }
 
+void utilisateurs()
+{
+	User::init();
+	if(User::isRealUser(string("moi"), string("toi")))
+		cout << "Ça mARCHe" << endl;
+	else
+		cout << "Ça mARCHe PAS" << endl;
+}
+
 int main(int argc, char **argv)
 {
 	//file_utils();
 	//film_test();
-	get_films();
+	//get_films();
+	utilisateurs();
 }
