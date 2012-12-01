@@ -59,9 +59,11 @@ int Film::getTypeId()
 	return lexical_cast<int>(Film::fu->get(id, MOVIE_TYPE_ID));
 }
 
-string Film::getTypeName() // TODO
+string Film::getTypeName()
 {
-	return Film::fu->get(id, MOVIE_TYPE_ID);
+	int type_id = getTypeId();
+	Type::init();
+	return Type::getType(type_id);
 }
 
 int Film::getBasePrice()

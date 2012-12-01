@@ -6,6 +6,7 @@
 #include <iostream>
 
 #include "fileutils.h"
+#include "type.h"
 
 #define MOVIE_FILE_NAME		"./films"
 #define MOVIE_NAME_ID		1

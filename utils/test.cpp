@@ -49,8 +49,11 @@ void get_films()
 	vector<Film> films = Film::getFilms();
 	vector<Film>::iterator it;
 	for( it=films.begin() ; it != films.end(); it++ )
+	{
 		cout << "Nom : " << (*it).getName() << endl;
-
+		cout << "Type : " << (*it).getTypeName() << " :: " << it->getTypeId() << endl;
+	}
+	
 }
 
 int main(int argc, char **argv)
