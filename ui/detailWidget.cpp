@@ -19,13 +19,16 @@ void DetailWidget::load(int i)//(Film* f)
 	textSynopsis->setText((QString)f->getSynopsis().c_str());
 	string casting = "";
 
-	//vector<int> liste = f.getHoraires();
-	//Horaire horaire;
-	//for (int i=0;i<horaire.size();i++)
-	//{
-	//	horaire = new Horaire(liste.at(i));
-	//	cbBxHoraire.addItem(horaire.getString());
-	//}	
+	
+	vector<int> liste = f->getHoraires();
+	vector<int>::iterator it;
+	//QString& horaire_str=new QString;
+	for (it=liste.begin();it!=liste.end();it++)
+	{
+	//	horaire_str=Horaire::getHoraire(*it).c_str();
+		cbBxHoraire->addItem("",
+				QVariant(*it));
+	}	
 }
 
 

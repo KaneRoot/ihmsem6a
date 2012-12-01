@@ -5,6 +5,7 @@ QT += core \
 HEADERS += utils/fileutils.h\
 			utils/type.h\
 			utils/film.h\
+			utils/horaire.h\
 			ui/accueil.h\
 			ui/connection.h\
 			ui/frameClient.h\
@@ -14,6 +15,7 @@ HEADERS += utils/fileutils.h\
 SOURCES += utils/fileutils.cpp\
 			utils/type.cpp\
 			utils/film.cpp\
+			utils/horaire.cpp\
 			ui/accueil.cpp\
 		 	ui/connection.cpp\
 		 	ui/frameClient.cpp\

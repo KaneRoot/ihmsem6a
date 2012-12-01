@@ -24,6 +24,8 @@ void ListeWidget::load()
 		boutons.at(boutons.size()-1)->setVisible(true);
 		QObject::connect(boutons.at(boutons.size()-1),SIGNAL(clicked()),
 				this, SLOT(showDetail()));
+		boutons.at(boutons.size()-1)->resize(boutons.at(boutons.size()-1)->width(),
+				50);
 		layout->addWidget(boutons.at(boutons.size()-1),i%2,j%2);
 		i++;
 		if(i%2==0)
@@ -32,7 +34,6 @@ void ListeWidget::load()
 		}
 	}
 	this->setLayout(layout);
-	// TODO Générer les boutons. Charger les films
 }
 
 void ListeWidget::showDetail()
@@ -44,5 +45,5 @@ void ListeWidget::showDetail()
 		((QFrame*)this->parentWidget())->frameRect().height());
 	this->setVisible(false);
 	detail->setBrother(this);
-	detail->load(1);
+	detail->load(1); 
 }

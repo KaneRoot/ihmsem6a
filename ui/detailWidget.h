@@ -3,7 +3,7 @@
 #define __DETAILWIDGET__
 
 #include "../utils/film.h"
-//#include "../utils/horaire.h"
+#include "../utils/horaire.h"
 
 
 #include <iostream>
