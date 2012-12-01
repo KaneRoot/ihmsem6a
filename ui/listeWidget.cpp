@@ -20,7 +20,8 @@ void ListeWidget::load()
 	int i=0,j=0;
 	for (it=films.begin();it!=films.end();it++)
 	{
-		boutons.push_back(new QPushButton(((QString)it->getName().c_str())));
+		boutons.push_back(new QButtonImproved(((QString)it->getName().c_str()),
+					this,i));
 		boutons.at(boutons.size()-1)->setVisible(true);
 		QObject::connect(boutons.at(boutons.size()-1),SIGNAL(clicked()),
 				this, SLOT(showDetail()));
@@ -45,5 +46,6 @@ void ListeWidget::showDetail()
 		((QFrame*)this->parentWidget())->frameRect().height());
 	this->setVisible(false);
 	detail->setBrother(this);
-	detail->load(1); 
+	QButtonImproved* b =(QButtonImproved*)sender();
+	detail->load(b->getId()); 
 }

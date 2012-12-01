@@ -7,6 +7,7 @@
 #include <QGridLayout>
 #include <iostream>
 
+#include "qButtonImproved.h"
 #include "detailWidget.h"
 #include "ui_listeWidget.h"
 
@@ -18,7 +19,7 @@ class ListeWidget: public QWidget, private Ui::ListeForm
 		~ListeWidget();
 		void load();
 	private:
-		vector<QPushButton*> boutons;
+		vector<QButtonImproved*> boutons;
 		vector<Film> films;
 		DetailWidget* detail;
 	private slots:
