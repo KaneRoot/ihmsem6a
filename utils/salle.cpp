@@ -27,3 +27,8 @@ void Salle::reserverPlace(int id_salle)
 {
 	salles->set(id_salle, 2, lexical_cast<string>(getNbPlacesPrises(id_salle)-1));
 }
+
+void Salle::save()
+{
+	salles->write();
+}

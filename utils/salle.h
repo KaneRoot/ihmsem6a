@@ -15,6 +15,7 @@ class Salle
 		static int getNbPlaces(int id);
 		static int getNbPlacesPrises(int id);
 		static void reserverPlace(int id);
+		static void save();
 
 	private :
 		static FileUtils * salles;
