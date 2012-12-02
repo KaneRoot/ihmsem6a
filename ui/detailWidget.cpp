@@ -4,7 +4,6 @@
 DetailWidget::DetailWidget(QWidget* parent):QWidget(parent),Ui::DetailForm()
 {
 	setupUi(this);	
-
 	QObject::connect(btn_back,SIGNAL(clicked()),
 			this,SLOT(retour()));
 }
@@ -25,7 +24,9 @@ void DetailWidget::load(int i)//(Film* f)
 	//QString& horaire_str=new QString;
 	for (it=liste.begin();it!=liste.end();it++)
 	{
-	//	horaire_str=Horaire::getHoraire(*it).c_str();
+		//std::cout << Horaire::getHoraire(1) << "\n";
+		//std::cout << Horaire::getHoraire(*it) << "\n";
+		//horaire_str=Horaire::getHoraire(*it).c_str();
 		cbBxHoraire->addItem("",
 				QVariant(*it));
 	}	

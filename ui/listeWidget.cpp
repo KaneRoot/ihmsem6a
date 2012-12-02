@@ -46,6 +46,6 @@ void ListeWidget::showDetail()
 		((QFrame*)this->parentWidget())->frameRect().height());
 	this->setVisible(false);
 	detail->setBrother(this);
-	QButtonImproved* b =(QButtonImproved*)sender();
+	QButtonImproved* b = (QButtonImproved*) sender();
 	detail->load(b->getId()); 
 }

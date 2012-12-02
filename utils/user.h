@@ -1,7 +1,7 @@
 #ifndef __USER_H__
 #define __USER_H__
 
-#define USERS_FILE_NAME "../data/users"
+#define USERS_FILE_NAME "data/users"
 
 #include <vector>
 #include <iostream>
