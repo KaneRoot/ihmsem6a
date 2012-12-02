@@ -17,17 +17,19 @@ void ListeWidget::load()
 	films = Film::getFilms();
 	vector<Film>::iterator it;
 	QGridLayout * layout = new QGridLayout;
+	
 	int i=0,j=0;
 	for (it=films.begin();it!=films.end();it++)
 	{
-		boutons.push_back(new QButtonImproved(((QString)it->getName().c_str()),
+		boutons.push_back(new QButtonImproved(
+					QString::fromUtf8(it->getName().c_str()),
 					this,i));
 		boutons.at(boutons.size()-1)->setVisible(true);
 		QObject::connect(boutons.at(boutons.size()-1),SIGNAL(clicked()),
 				this, SLOT(showDetail()));
 		boutons.at(boutons.size()-1)->resize(boutons.at(boutons.size()-1)->width(),
 				50);
-		layout->addWidget(boutons.at(boutons.size()-1),i%2,j%2);
+		layout->addWidget(boutons.at(boutons.size()-1),j,i%2);
 		i++;
 		if(i%2==0)
 		{
