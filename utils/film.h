@@ -4,11 +4,12 @@
 #include <vector>
 #include <map>
 #include <iostream>
+#include <boost/regex.hpp>
 
 #include "fileutils.h"
 #include "type.h"
 
-#define MOVIE_FILE_NAME		"./data/films"
+#define MOVIE_FILE_NAME		"../data/films"
 #define MOVIE_NAME_ID		1
 #define MOVIE_TYPE_ID		2
 #define MOVIE_3D_ID			3
@@ -27,6 +28,8 @@ class Film
 		Film();
 		Film(int id);
 		virtual ~Film();
+
+		static void init();
 
 		string getName();
 		bool is3d();
@@ -51,6 +54,8 @@ class Film
 		void setRealisator(string realisator);
 
 		static vector<Film> getFilms();
+		static vector<Film> getFilms_search_name(string expression);
+		static vector<int> getFilmsIds_search_name(string s);
 
 		void save();
 

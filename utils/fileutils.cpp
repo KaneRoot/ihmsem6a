@@ -61,9 +61,11 @@ vector<int> FileUtils::getIDs()
 {
 	vector<int> res;
 	map<int, vector<string> >::iterator it;
-	for ( it=lines.begin() ; it != lines.end(); it++ )
-		res.push_back(it->first);
 	
+	for ( it=lines.begin() ; it != lines.end(); it++ )
+	{
+		res.push_back(it->first);
+	}
 	return res;
 }
 

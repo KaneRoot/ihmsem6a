@@ -7,22 +7,12 @@ FileUtils * Film::fu = NULL;
 
 Film::Film() : id(-1)
 {
-	if(fu == NULL)
-	{
-		string f(MOVIE_FILE_NAME);
-		Film::fu = new FileUtils(f) ;
-		Film::fu->init();
-	}
+	Film::init();
 }
 
 Film::Film(int ident) : id(ident)
 {
-	if(fu == NULL)
-	{
-		string f(MOVIE_FILE_NAME);
-		Film::fu = new FileUtils(f) ;
-		Film::fu->init();
-	}
+	Film::init();
 }
 
 vector<Film> Film::getFilms()
@@ -200,3 +190,41 @@ void Film::save()
 {
 	Film::fu->write();
 }
+
+vector<Film> Film::getFilms_search_name(string expression)
+{
+	vector<int> movies_ids = Film::getFilmsIds_search_name(expression);
+	vector<Film> movies;
+	for(size_t i(0) ; i < movies_ids.size() ; i++)
+	{
+		movies.push_back(Film(movies_ids.at(i)));
+	}
+	return movies;
+}
+
+vector<int> Film::getFilmsIds_search_name(string expression)
+{
+	vector<int> movies_concerned;
+	vector<int> films_ids = Film::fu->getIDs();
+	for(size_t i(0) ; i < films_ids.size() ; i++)
+	{
+		string movie_name = Film::fu->get(films_ids.at(i), MOVIE_NAME_ID) ;
+		if(string::npos != movie_name.find(expression))
+		{
+			movies_concerned.push_back(films_ids.at(i));
+		}
+	}
+
+	return movies_concerned;
+}
+
+void Film::init()
+{
+	if(fu == NULL)
+	{
+		string f(MOVIE_FILE_NAME);
+		Film::fu = new FileUtils(f) ;
+		Film::fu->init();
+	}
+}
+

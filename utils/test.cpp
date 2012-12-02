@@ -55,7 +55,6 @@ void get_films()
 		cout << "Nom : " << (*it).getName() << endl;
 		cout << "Type : " << (*it).getTypeName() << " :: " << it->getTypeId() << endl;
 	}
-	
 }
 
 void utilisateurs()
@@ -67,10 +66,20 @@ void utilisateurs()
 		cout << "Ça mARCHe PAS" << endl;
 }
 
+void search_films()
+{
+	Film::init();
+	string expression("Iron");
+	vector<Film> films = Film::getFilms_search_name(expression);
+	for(size_t i(0) ; i < films.size() ; i++)
+		cout << films.at(i).getName() << endl;
+}
+
 int main(int argc, char **argv)
 {
 	//file_utils();
 	//film_test();
 	//get_films();
-	utilisateurs();
+	//utilisateurs();
+	search_films();
 }
