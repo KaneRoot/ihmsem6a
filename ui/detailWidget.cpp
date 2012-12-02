@@ -17,14 +17,20 @@ void DetailWidget::load(int i)//(Film* f)
 	labelTitle->setText(QString::fromUtf8(f->getName().c_str()));
 	textSynopsis->setText(QString::fromUtf8(f->getSynopsis().c_str()));
 	string casting = "";
-
+	vector<string> actors = f->getActors();
+	vector<string>::iterator its;
+	for (its=actors.begin();its!=actors.end();its++)
+	{
+		casting.append(*its);
+		casting.push_back(';');
+	}
+	textEdit->setText(QString::fromUtf8(casting.c_str()));
+		
 	vector<int> liste = f->getHoraires();
 	vector<int>::iterator it;
 	Horaire::init();
 	for (it=liste.begin();it!=liste.end();it++)
 	{
-		//std::cout << Horaire::getHoraire(1) << "\n";
-		//std::cout << Horaire::getHoraire(*it) << "\n";
 		cbBxHoraire->addItem(QString::fromUtf8(Horaire::getHoraire(*it).c_str()),
 				QVariant(*it));
 	}	

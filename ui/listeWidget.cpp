@@ -1,10 +1,13 @@
 
 #include "listeWidget.h"
 
-ListeWidget::ListeWidget(QWidget* parent):QWidget(parent)
+ListeWidget::ListeWidget(QToolBox* toolBox,int mode,QWidget* parent):QWidget(parent)
 	,Ui::ListeForm()
 {
 	setupUi(this);
+	this->toolbox=toolBox;
+	this->mode=mode;
+	this->showed=false;
 	load();
 }
 
@@ -24,6 +27,10 @@ void ListeWidget::load()
 		boutons.push_back(new QButtonImproved(
 					QString::fromUtf8(it->getName().c_str()),
 					this,i));
+		boutons.at(boutons.size()-1)->setCheckable(
+				getMode()==MODE_ADMIN);
+		
+
 		boutons.at(boutons.size()-1)->setVisible(true);
 		QObject::connect(boutons.at(boutons.size()-1),SIGNAL(clicked()),
 				this, SLOT(showDetail()));
@@ -42,12 +49,26 @@ void ListeWidget::load()
 void ListeWidget::showDetail()
 {
 	films = Film::getFilms();
+	
 	detail = new  DetailWidget(this->parentWidget());
 	detail->setVisible(true);
 	detail->setGeometry(0,0,((QFrame*)this->parentWidget())->frameRect().width(),
 		((QFrame*)this->parentWidget())->frameRect().height());
-	this->setVisible(false);
 	detail->setBrother(this);
+
 	QButtonImproved* b = (QButtonImproved*) sender();
 	detail->load(b->getId()); 
+
+
+	if (!this->showed)
+	{
+		toolbox->addItem(detail,QString::fromUtf8("Détails"));
+	}
+	toolbox->setCurrentIndex(1);
+	showed=true;
+}
+
+int ListeWidget::getMode()
+{
+	return this->mode;
 }
