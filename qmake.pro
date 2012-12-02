@@ -6,6 +6,7 @@ HEADERS += utils/fileutils.h\
 			utils/type.h\
 			utils/film.h\
 			utils/horaire.h\
+			utils/user.h\
 			ui/qButtonImproved.h\
 			ui/accueil.h\
 			ui/connection.h\
@@ -17,6 +18,7 @@ SOURCES += utils/fileutils.cpp\
 			utils/type.cpp\
 			utils/film.cpp\
 			utils/horaire.cpp\
+			utils/user.cpp\
 			ui/qButtonImproved.cpp\
 			ui/accueil.cpp\
 		 	ui/connection.cpp\

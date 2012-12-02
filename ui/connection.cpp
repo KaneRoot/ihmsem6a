@@ -21,7 +21,9 @@ bool ConnectionDial::isConnect()
 
 void ConnectionDial::validation()
 {
-	isOk=true;
+	User::init();
+	isOk=User::isRealUser(txt_identifiant->text().toStdString(),
+			txt_password->text().toStdString());
 	this->accepted();
 	this->close();
 }

@@ -2,6 +2,8 @@
 #ifndef __CONNECTION_H__
 #define __CONNECTION_H__
 
+#include "../utils/user.h"
+
 #include "ui_connectionBox.h"
 
 class ConnectionDial:public QDialog,public Ui::connectionDial
