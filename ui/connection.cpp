@@ -24,8 +24,6 @@ void ConnectionDial::validation()
 	User::init();
 	isOk=User::isRealUser(txt_identifiant->text().toStdString(),
 			txt_password->text().toStdString());
-	isOk=User::isRealUser("za","za");
-	//	isOk=true;
 	this->accepted();
 	this->close();
 }
