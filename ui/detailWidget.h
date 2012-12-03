@@ -7,6 +7,7 @@
 
 
 #include <iostream>
+#include <QToolBox>
 
 #include "ui_detailWidget.h"
 
@@ -14,13 +15,16 @@ class DetailWidget : public QWidget, private Ui::DetailForm
 {
 	Q_OBJECT
 	public:
-		DetailWidget(QWidget* parent=0);
+		DetailWidget(QToolBox* toolbox,QWidget* parent=0);
 		~DetailWidget();
 		void setBrother(QWidget* bro);
+		void setToolBox(QToolBox* toolbox);
+		QToolBox* getToolBox();
 		void load(int i);//(Film* f);
 	private:
 		Film film;
 		QWidget* brother;
+		QToolBox* toolBox;
 	private slots:
 		void retour();
 };

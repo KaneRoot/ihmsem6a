@@ -8,8 +8,9 @@
 #include <QGridLayout>
 #include <iostream>
 
+#include "choiceClientDialog.h"
 #include "qButtonImproved.h"
-#include "detailWidget.h"
+
 #include "ui_listeWidget.h"
 
 #define MODE_ADMIN 12321
@@ -26,10 +27,9 @@ class ListeWidget: public QWidget, private Ui::ListeForm
 	private:
 		vector<QButtonImproved*> boutons;
 		vector<Film> films;
-		DetailWidget* detail;
 		QToolBox* toolbox;
+		ChoiceClientDialog* dialClient;
 		int mode;
-		bool showed;
 	private slots:
 		void showDetail();
 };

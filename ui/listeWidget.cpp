@@ -7,7 +7,7 @@ ListeWidget::ListeWidget(QToolBox* toolBox,int mode,QWidget* parent):QWidget(par
 	setupUi(this);
 	this->toolbox=toolBox;
 	this->mode=mode;
-	this->showed=false;
+	this->dialClient=NULL;
 	load();
 }
 
@@ -48,27 +48,22 @@ void ListeWidget::load()
 
 void ListeWidget::showDetail()
 {
-	films = Film::getFilms();
-	
-	detail = new  DetailWidget(this->parentWidget());
-	detail->setVisible(true);
-	detail->setGeometry(0,0,((QFrame*)this->parentWidget())->frameRect().width(),
-		((QFrame*)this->parentWidget())->frameRect().height());
-	detail->setBrother(this);
-
-	QButtonImproved* b = (QButtonImproved*) sender();
-	detail->load(b->getId()); 
-
-
-	if (!this->showed)
+	if (this->mode==MODE_CLIENT)
 	{
-		toolbox->addItem(detail,QString::fromUtf8("Détails"));
+		if (dialClient==NULL)
+		{
+			dialClient = new ChoiceClientDialog(this->toolbox,
+					this->parentWidget());
+		}
+		QButtonImproved* button = (QButtonImproved*)this->sender();
+		dialClient->setIdFilm(button->getId());
+		dialClient->show();
 	}
-	toolbox->setCurrentIndex(1);
-	showed=true;
 }
 
 int ListeWidget::getMode()
 {
 	return this->mode;
 }
+
+
