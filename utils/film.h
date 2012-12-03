@@ -8,6 +8,7 @@
 
 #include "fileutils.h"
 #include "type.h"
+#include "planning.h"
 
 #define MOVIE_FILE_NAME		"./data/films"//"../data/films"
 #define MOVIE_NAME_ID		1
@@ -48,6 +49,8 @@ class Film
 		void setActors(vector<string> actors);
 		void setActors(string actors);
 		void setRealisator(string realisator);
+		vector<int> getHoraires();
+		vector<int> getHorairesLibres();
 
 		static vector<Film> getFilms();
 		static vector<Film> getFilms_search_name(string expression);

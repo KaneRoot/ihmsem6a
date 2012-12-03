@@ -12,6 +12,7 @@
 #include <vector>
 #include <iostream>
 #include "fileutils.h"
+#include "salle.h"
 
 using namespace std;
 
@@ -23,6 +24,9 @@ class Planning
 		static bool reserverPlace(int id_film, int id_salle, int id_horaire);
 		static int getNbPlacesPrises(int id_film, int id_salle, int id_horaire);
 		static int getNbPlacesPrises(int id_planning);
+		static vector<int> getHorairesFilm(int id_film);
+		static vector<int> getHorairesLibresFilm(int id_film);
+		static int getNbPlacesRestantes(int id_film, int id_salle, int id_horaire);
 		static void save();
 
 	private :

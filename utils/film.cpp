@@ -197,6 +197,18 @@ void Film::init()
 	}
 }
 
+vector<int> Film::getHoraires()
+{
+	Planning::init();
+	return Planning::getHorairesFilm(id);
+}
+
+vector<int> Film::getHorairesLibres()
+{
+	Planning::init();
+	return Planning::getHorairesLibresFilm(id);
+}
+
 void Film::addFilm(
 				string name, 
 				int id_type, 
