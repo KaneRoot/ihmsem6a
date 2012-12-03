@@ -4,9 +4,6 @@
 
 
 #include "ui_choiceClientDialog.h"
-
-
-
 #include "detailWidget.h"
 
 class ChoiceClientDialog: public QDialog, private Ui::clientDialog
