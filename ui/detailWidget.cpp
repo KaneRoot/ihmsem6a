@@ -1,11 +1,12 @@
 
 #include "detailWidget.h"
 
-DetailWidget::DetailWidget(QWidget* parent):QWidget(parent),Ui::DetailForm()
+DetailWidget::DetailWidget(QToolBox* toolbox, QWidget* parent):QWidget(parent),Ui::DetailForm()
 {
 	setupUi(this);	
 	QObject::connect(btn_back,SIGNAL(clicked()),
 			this,SLOT(retour()));
+	setToolBox(toolbox);
 }
 
 DetailWidget::~DetailWidget()
@@ -26,7 +27,7 @@ void DetailWidget::load(int i)//(Film* f)
 	}
 	textEdit->setText(QString::fromUtf8(casting.c_str()));
 		
-	vector<int> liste = f->getHoraires();
+/*	vector<int> liste = f->getHoraires();
 	vector<int>::iterator it;
 	Horaire::init();
 	for (it=liste.begin();it!=liste.end();it++)
@@ -34,6 +35,7 @@ void DetailWidget::load(int i)//(Film* f)
 		cbBxHoraire->addItem(QString::fromUtf8(Horaire::getHoraire(*it).c_str()),
 				QVariant(*it));
 	}	
+*/
 }
 
 
@@ -42,10 +44,19 @@ void DetailWidget::setBrother(QWidget* bro)
 	brother=bro;
 }
 
+QToolBox* DetailWidget::getToolBox()
+{
+	return this->toolBox;
+}
+
+void DetailWidget::setToolBox(QToolBox* toolbox)
+{
+	this->toolBox = toolbox; 
+}
+
 void DetailWidget::retour()
 {
-	brother->setVisible(true);
-	this->setVisible(false);
+	toolBox->setCurrentIndex(0);
 }
 
 

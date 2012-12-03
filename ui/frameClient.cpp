@@ -11,8 +11,9 @@ FrameClient::FrameClient(QWidget* parent):QFrame(parent),Ui::FormClient()
 	liste->setVisible(true);
 	liste->setGeometry(0,0,this->frameRect().width(),
 			this->frameRect().height());
-	toolBox->addItem(liste,QString::fromUtf8("Catalogue"));
+	toolBox->addItem(liste,QString::fromUtf8("Catalogue de film"));
 }
+
 FrameClient::~FrameClient()
 {}
 

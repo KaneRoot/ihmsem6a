@@ -12,6 +12,7 @@ HEADERS += utils/fileutils.h\
 			ui/connection.h\
 			ui/frameClient.h\
 			ui/frameAdmin.h\
+			ui/choiceClientDialog.h\
 			ui/detailWidget.h\
 			ui/listeWidget.h
 SOURCES += utils/fileutils.cpp\
@@ -25,6 +26,7 @@ SOURCES += utils/fileutils.cpp\
 		 	ui/frameClient.cpp\
 		 	ui/frameAdmin.cpp\
 		 	ui/detailWidget.cpp\
+			ui/choiceClientDialog.cpp\
 			ui/listeWidget.cpp\
 		 	main.cpp
 FORMS += ui/accueil.ui\
@@ -32,4 +34,5 @@ FORMS += ui/accueil.ui\
 		 ui/frameClient.ui\
 		 ui/frameAdmin.ui\
 		 ui/listeWidget.ui\
+		 ui/choiceClientDialog.ui\
 		 ui/detailWidget.ui\
