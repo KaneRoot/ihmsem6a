@@ -6,7 +6,10 @@ DetailWidget::DetailWidget(QToolBox* toolbox, QWidget* parent):QWidget(parent),U
 	setupUi(this);	
 	QObject::connect(btn_back,SIGNAL(clicked()),
 			this,SLOT(retour()));
+	QObject::connect(btnReserver,SIGNAL(clicked()),
+			this,SLOT(toReserve()));
 	setToolBox(toolbox);
+
 }
 
 DetailWidget::~DetailWidget()
@@ -14,11 +17,11 @@ DetailWidget::~DetailWidget()
 
 void DetailWidget::load(int i)//(Film* f)
 {
-	Film *f = new Film(i);
-	labelTitle->setText(QString::fromUtf8(f->getName().c_str()));
-	textSynopsis->setText(QString::fromUtf8(f->getSynopsis().c_str()));
+	film = new Film(i);
+	labelTitle->setText(QString::fromUtf8(film->getName().c_str()));
+	textSynopsis->setText(QString::fromUtf8(film->getSynopsis().c_str()));
 	string casting = "";
-	vector<string> actors = f->getActors();
+	vector<string> actors = film->getActors();
 	vector<string>::iterator its;
 	for (its=actors.begin();its!=actors.end();its++)
 	{
@@ -27,12 +30,12 @@ void DetailWidget::load(int i)//(Film* f)
 	}
 	textEdit->setText(QString::fromUtf8(casting.c_str()));
 
-	vector<int> liste = f->getHoraires();
+	vector<int> liste = film->getHoraires();
 	vector<int>::iterator it;
 	Horaire::init();
 	for (it=liste.begin();it!=liste.end();it++)
 	{
-		cbBxHoraire->addItem(QString::fromUtf8(Horaire::getHoraire(*it).c_str()),
+		comboBox->addItem(QString::fromUtf8(Horaire::getHoraire(*it).c_str()),
 				QVariant(*it));
 	}	
 
@@ -59,6 +62,13 @@ void DetailWidget::retour()
 	toolBox->setCurrentIndex(0);
 }
 
+void DetailWidget::toReserve()
+{
+	string abo = comboBox->itemText(comboBox->currentIndex()).toStdString();
+	PaiementWidget* paiement = new PaiementWidget(abo,
+			spinBox->value(),film,toolBox,this);
+	paiement->show();
+}
 
 
 

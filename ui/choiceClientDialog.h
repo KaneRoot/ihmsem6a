@@ -4,7 +4,10 @@
 
 
 #include "ui_choiceClientDialog.h"
+
 #include "detailWidget.h"
+#include "paiementWidget.h"
+#include <QToolBox>
 
 class ChoiceClientDialog: public QDialog, private Ui::clientDialog
 {
@@ -20,7 +23,7 @@ class ChoiceClientDialog: public QDialog, private Ui::clientDialog
 		int idFilm;
 	private slots:
 		void toDetail();
-		void toReservation();
+		void toReserv();
 };
 
 

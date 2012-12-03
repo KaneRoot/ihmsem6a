@@ -5,7 +5,7 @@
 #include "../utils/film.h"
 #include "../utils/horaire.h"
 
-
+#include "paiementWidget.h"
 #include <iostream>
 #include <QToolBox>
 
@@ -22,11 +22,12 @@ class DetailWidget : public QWidget, private Ui::DetailForm
 		QToolBox* getToolBox();
 		void load(int i);//(Film* f);
 	private:
-		Film film;
+		Film *film;
 		QWidget* brother;
 		QToolBox* toolBox;
 	private slots:
 		void retour();
+		void toReserve();
 };
 
 #endif

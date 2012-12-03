@@ -11,6 +11,7 @@ ChoiceClientDialog::ChoiceClientDialog(QToolBox* toolbox,QWidget*parent):
 
 	QObject::connect(cancelButton,SIGNAL(clicked()),this,SLOT(close()));
 	QObject::connect(detailsButton,SIGNAL(clicked()),this,SLOT(toDetail()));
+	QObject::connect(reserveButton,SIGNAL(clicked()),this,SLOT(toReserv()));
 }
 
 
@@ -48,8 +49,11 @@ void ChoiceClientDialog::toDetail()
 }
 
 
-void ChoiceClientDialog::toReservation()
+void ChoiceClientDialog::toReserv()
 {
-	//TODO
+	string abo = comboBox->itemText(comboBox->currentIndex()).toStdString();
+	PaiementWidget* paiement = new PaiementWidget(abo,
+			spinBox->value(),1,toolBox,this);
+	paiement->show();
 }
 
