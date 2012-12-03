@@ -17,8 +17,7 @@
 #define MOVIE_SYNOPSIS_ID	5
 #define MOVIE_ACTORS_ID		6
 #define MOVIE_REAL_ID		7
-#define MOVIE_HORAIRES_ID	8
-#define MOVIE_BASE_PRICE_ID	9
+#define MOVIE_BASE_PRICE_ID	8
 
 using namespace std;
 
@@ -39,7 +38,6 @@ class Film
 		string getSynopsis();
 		vector<string> getActors();
 		string getActorsString();
-		vector<int> getHoraires();
 		string getRealisator();
 		
 		void setName(string name);
@@ -49,15 +47,15 @@ class Film
 		void setSynopsis(string s);
 		void setActors(vector<string> actors);
 		void setActors(string actors);
-		void setHoraires(vector<int> h);
-		void setHoraires(string h);
 		void setRealisator(string realisator);
 
 		static vector<Film> getFilms();
 		static vector<Film> getFilms_search_name(string expression);
 		static vector<int> getFilmsIds_search_name(string s);
+		static void addFilm( string name, int id_type, bool is3d, string duree, string synopsis,  
+						vector<string> actors, string realisator, int base_price);
 
-		void save();
+		static void save();
 
 	private :
 		static FileUtils * fu;

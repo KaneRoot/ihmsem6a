@@ -31,10 +31,6 @@ void film_test()
 
 	cout << "Film synopsis : " << film.getSynopsis() << endl;
 	cout << "Horaires : ";
-	vector<int> horaires(film.getHoraires());
-	for(unsigned int i(0) ; i < horaires.size() ; i++)
-		cout << horaires.at(i) << " ";
-	cout << endl;
 
 	vector<string> actors(film.getActors());
 	for(unsigned int i(0) ; i < actors.size() ; i++)

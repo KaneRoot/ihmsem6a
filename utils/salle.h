@@ -18,7 +18,7 @@ class Salle
 		static void save();
 
 	private :
-		static FileUtils * salles;
+		static FileUtils * fu;
 };
 
 #endif

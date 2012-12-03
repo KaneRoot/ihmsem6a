@@ -38,7 +38,7 @@ Plus tard
 	- affichage résultat de recherche
 
 créneaux : id;horraire
-planning : idfilm;idsalle;idcréneau;nb_réservations_effectuées
+planning : id;idfilm;idsalle;idcréneau;nb_réservations_effectuées
 users : login;mdp
 films : idfilm;nom;3d;type;synopsis;durée
 salles : idsalle;nb_places
