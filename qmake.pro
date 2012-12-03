@@ -5,6 +5,8 @@ QT += core \
 HEADERS += utils/fileutils.h\
 			utils/type.h\
 			utils/film.h\
+			utils/salle.h\
+			utils/planning.h\
 			utils/horaire.h\
 			utils/user.h\
 			ui/qButtonImproved.h\
@@ -17,7 +19,9 @@ HEADERS += utils/fileutils.h\
 			ui/listeWidget.h
 SOURCES += utils/fileutils.cpp\
 			utils/type.cpp\
+			utils/salle.cpp\
 			utils/film.cpp\
+			utils/planning.cpp\
 			utils/horaire.cpp\
 			utils/user.cpp\
 			ui/qButtonImproved.cpp\
