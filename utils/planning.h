@@ -19,9 +19,10 @@ class Planning
 {
 	public :	
 		static void init();
-		static int getId(int id_film, int id_salle);
-		static int reserverPlace(int id_film, int id_salle, int horaire);
+		static int getId(int id_film, int id_salle, int id_horaire);
+		static bool reserverPlace(int id_film, int id_salle, int id_horaire);
 		static int getNbPlacesPrises(int id_film, int id_salle, int id_horaire);
+		static int getNbPlacesPrises(int id_planning);
 		static void save();
 
 	private :
@@ -29,6 +30,3 @@ class Planning
 };
 
 #endif
-
-#endif
-

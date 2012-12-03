@@ -65,7 +65,7 @@ void utilisateurs()
 void search_films()
 {
 	Film::init();
-	string expression("Iron");
+	string expression("test");
 	vector<Film> films = Film::getFilms_search_name(expression);
 	for(size_t i(0) ; i < films.size() ; i++)
 		cout << films.at(i).getName() << endl;

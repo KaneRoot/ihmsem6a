@@ -1,19 +1,19 @@
 #include "horaire.h"
 
-FileUtils * Horaire::horaires = NULL;
+FileUtils * Horaire::fu = NULL;
 
 void Horaire::init()
 {
-	if( Horaire::horaires == NULL)
+	if( Horaire::fu == NULL)
 	{
 		string f(HORAIRES_FILE_NAME);
 		
-		Horaire::horaires = new FileUtils(f);
-		Horaire::horaires->init();
+		Horaire::fu = new FileUtils(f);
+		Horaire::fu->init();
 	}
 }
 
 string Horaire::getHoraire(int id)
 {
-	return Horaire::horaires->get(id, 1);
+	return Horaire::fu->get(id, 1);
 }

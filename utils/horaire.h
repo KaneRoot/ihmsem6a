@@ -16,7 +16,7 @@ class Horaire
 		static string getHoraire(int id);
 
 	private :
-		static FileUtils * horaires;
+		static FileUtils * fu;
 };
 
 #endif
