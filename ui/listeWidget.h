@@ -4,6 +4,7 @@
 
 #include "../utils/film.h"
 
+#include <QToolBox>
 #include <QGridLayout>
 #include <iostream>
 
@@ -11,17 +12,24 @@
 #include "detailWidget.h"
 #include "ui_listeWidget.h"
 
+#define MODE_ADMIN 12321
+#define MODE_CLIENT 12421
+
 class ListeWidget: public QWidget, private Ui::ListeForm
 {
 	Q_OBJECT
 	public:
-		ListeWidget(QWidget* parent=0);
+		ListeWidget(QToolBox* toolBox,int mode,QWidget* parent=0);
 		~ListeWidget();
 		void load();
+		int getMode();
 	private:
 		vector<QButtonImproved*> boutons;
 		vector<Film> films;
 		DetailWidget* detail;
+		QToolBox* toolbox;
+		int mode;
+		bool showed;
 	private slots:
 		void showDetail();
 };
