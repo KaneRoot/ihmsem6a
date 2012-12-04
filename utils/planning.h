@@ -22,6 +22,7 @@ class Planning
 		static void init();
 		static int getId(int id_film, int id_salle, int id_horaire);
 		static bool reserverPlace(int id_film, int id_salle, int id_horaire);
+		static bool reserverPlace(int id_film, int id_salle, int id_horaire, int nb);
 		static int getNbPlacesPrises(int id_film, int id_salle, int id_horaire);
 		static int getNbPlacesPrises(int id_planning);
 		static vector<int> getHorairesFilm(int id_film);

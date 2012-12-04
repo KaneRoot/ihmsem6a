@@ -101,11 +101,16 @@ int Planning::getNbPlacesPrises(int id_film, int id_salle, int id_horaire)
 
 bool Planning::reserverPlace(int id_film, int id_salle, int id_horaire)
 {
+	return Planning::reserverPlace(id_film, id_salle, id_horaire, 1);
+}
+
+bool Planning::reserverPlace(int id_film, int id_salle, int id_horaire, int nb)
+{
 	int id = Planning::getId(id_film, id_salle, id_horaire);
 	int nb_places = getNbPlacesPrises(id_film, id_salle, id_horaire);
-	if(nb_places <= 0)
+	if((nb_places - nb) < 0)
 		return false;
-	nb_places--;
+	nb_places -= nb;
 	fu->set(id, PLANNING_PLACES_PRISES_ID, lexical_cast<string>(nb_places));
 	return true;
 }
