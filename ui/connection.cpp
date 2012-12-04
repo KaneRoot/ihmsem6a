@@ -24,7 +24,8 @@ void ConnectionDial::validation()
 	User::init();
 	isOk=User::isRealUser(txt_identifiant->text().toStdString(),
 			txt_password->text().toStdString());
-	cout << txt_identifiant->text() << " " << txt_password->text();
+	cout << txt_identifiant->text().toStdString() << " " 
+		<< txt_password->text().toStdString();
 	cout << "\n" << isOk << "\n";
 	this->accepted();
 	this->close();
