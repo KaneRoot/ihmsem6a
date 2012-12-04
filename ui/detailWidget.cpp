@@ -15,9 +15,9 @@ DetailWidget::DetailWidget(QToolBox* toolbox, QWidget* parent):QWidget(parent),U
 DetailWidget::~DetailWidget()
 {}
 
-void DetailWidget::load(int i)//(Film* f)
+void DetailWidget::load(Film* f)
 {
-	film = new Film(i);
+	film = f;
 	labelTitle->setText(QString::fromUtf8(film->getName().c_str()));
 	textSynopsis->setText(QString::fromUtf8(film->getSynopsis().c_str()));
 	string casting = "";

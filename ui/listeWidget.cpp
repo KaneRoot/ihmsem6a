@@ -56,7 +56,7 @@ void ListeWidget::showDetail()
 					this->parentWidget());
 		}
 		QButtonImproved* button = (QButtonImproved*)this->sender();
-		dialClient->setIdFilm(button->getId());
+		dialClient->setFilm(&films.at(button->getId()));
 		dialClient->show();
 	}
 }

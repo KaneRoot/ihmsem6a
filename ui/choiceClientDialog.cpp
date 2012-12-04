@@ -18,9 +18,9 @@ ChoiceClientDialog::ChoiceClientDialog(QToolBox* toolbox,QWidget*parent):
 ChoiceClientDialog::~ChoiceClientDialog()
 {}
 
-void ChoiceClientDialog::setIdFilm(int idfilm)
+void ChoiceClientDialog::setFilm(Film* film)
 {
-	this->idFilm = idfilm;
+	this->film = film;
 }
 
 void ChoiceClientDialog::toDetail()
@@ -34,7 +34,7 @@ void ChoiceClientDialog::toDetail()
 		details->setBrother(this);
 	}
 
-	details->load(this->idFilm);
+	details->load(this->film);
 	
 	if (!this->isShowed)
 	{

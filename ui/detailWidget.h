@@ -20,7 +20,7 @@ class DetailWidget : public QWidget, private Ui::DetailForm
 		void setBrother(QWidget* bro);
 		void setToolBox(QToolBox* toolbox);
 		QToolBox* getToolBox();
-		void load(int i);//(Film* f);
+		void load(Film* f);
 	private:
 		Film *film;
 		QWidget* brother;
