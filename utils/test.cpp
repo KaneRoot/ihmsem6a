@@ -76,6 +76,6 @@ int main(int argc, char **argv)
 	//file_utils();
 	//film_test();
 	//get_films();
-	//utilisateurs();
-	search_films();
+	utilisateurs();
+	//search_films();
 }

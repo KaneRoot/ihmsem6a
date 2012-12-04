@@ -15,5 +15,6 @@ void Horaire::init()
 
 string Horaire::getHoraire(int id)
 {
+	Horaire::init();
 	return Horaire::fu->get(id, 1);
 }

@@ -1,5 +1,5 @@
 CC = g++
-OPTIONS = -Wall
+OPTIONS = -Wall -I /users/info/il3/pittoli/repos/boost/boost_1_52_0 -L /users/info/il3/pittoli/repos/boost/boost_1_52_0/stage/lib/
 ARCHIVE = pittoli_hett
 PROG = main
 VALGRIND_OPTIONS = --leak-check=full -v
@@ -20,7 +20,7 @@ test.o : test.cpp
 	$(CC) $(OPTIONS) -c test.cpp -o test.o
 
 fileutils.o : fileutils.h fileutils.cpp
-	$(CC) $(OPTIONS) -c fileutils.cpp -o fileutils.o
+	$(CC) -c fileutils.cpp -o fileutils.o $(OPTIONS) 
 
 archive : 
 	-@tar cvfz $(ARCHIVE).tar.gz *
