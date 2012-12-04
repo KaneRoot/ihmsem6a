@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>757</width>
-    <height>493</height>
+    <height>474</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,13 +17,13 @@
    <property name="geometry">
     <rect>
      <x>170</x>
-     <y>419</y>
-     <width>181</width>
-     <height>31</height>
+     <y>390</y>
+     <width>230</width>
+     <height>61</height>
     </rect>
    </property>
    <property name="text">
-    <string>Retour</string>
+    <string>Annuler</string>
    </property>
   </widget>
   <widget class="QLabel" name="labelTitle">
@@ -116,9 +116,9 @@
   <widget class="QPushButton" name="btnReserver">
    <property name="geometry">
     <rect>
-     <x>440</x>
+     <x>450</x>
      <y>390</y>
-     <width>241</width>
+     <width>230</width>
      <height>61</height>
     </rect>
    </property>
