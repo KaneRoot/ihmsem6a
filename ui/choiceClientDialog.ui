@@ -49,7 +49,7 @@
      <rect>
       <x>240</x>
       <y>10</y>
-      <width>105</width>
+      <width>100</width>
       <height>110</height>
      </rect>
     </property>
@@ -63,9 +63,9 @@
    <widget class="QSpinBox" name="spinBox">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>130</x>
       <y>10</y>
-      <width>110</width>
+      <width>100</width>
       <height>31</height>
      </rect>
     </property>
@@ -76,9 +76,9 @@
    <widget class="QComboBox" name="comboBox">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>130</x>
       <y>90</y>
-      <width>110</width>
+      <width>100</width>
       <height>31</height>
      </rect>
     </property>
@@ -113,7 +113,7 @@
      <rect>
       <x>9</x>
       <y>10</y>
-      <width>101</width>
+      <width>110</width>
       <height>20</height>
      </rect>
     </property>
@@ -136,7 +136,7 @@
      <rect>
       <x>10</x>
       <y>90</y>
-      <width>101</width>
+      <width>110</width>
       <height>16</height>
      </rect>
     </property>
@@ -157,9 +157,9 @@
    <widget class="QComboBox" name="horaireComboBox">
     <property name="geometry">
      <rect>
-      <x>120</x>
+      <x>130</x>
       <y>50</y>
-      <width>110</width>
+      <width>100</width>
       <height>31</height>
      </rect>
     </property>
@@ -169,7 +169,7 @@
      <rect>
       <x>10</x>
       <y>50</y>
-      <width>101</width>
+      <width>110</width>
       <height>16</height>
      </rect>
     </property>
@@ -181,7 +181,7 @@
      </font>
     </property>
     <property name="text">
-     <string>Abonnement :</string>
+     <string>Horaire :</string>
     </property>
     <property name="alignment">
      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
