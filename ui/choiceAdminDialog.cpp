@@ -25,6 +25,7 @@ void ChoiceClientDialog::toEdit()
 				this->parentWidget());
 		toolBox->addItem(edit,QString::fromUtf8("Edition Film"));	
 	}
+	
 }
 
 void ChoiceClientDialog::toCreate()

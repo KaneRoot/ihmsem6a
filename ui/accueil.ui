@@ -82,7 +82,7 @@
     <property name="geometry">
      <rect>
       <x>380</x>
-      <y>140</y>
+      <y>120</y>
       <width>321</width>
       <height>191</height>
      </rect>
@@ -94,9 +94,9 @@
    <widget class="QPushButton" name="but_quit">
     <property name="geometry">
      <rect>
-      <x>580</x>
-      <y>366</y>
-      <width>121</width>
+      <x>20</x>
+      <y>340</y>
+      <width>680</width>
       <height>81</height>
      </rect>
     </property>
@@ -108,7 +108,7 @@
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>140</y>
+      <y>120</y>
       <width>311</width>
       <height>191</height>
      </rect>
@@ -120,14 +120,15 @@
    <widget class="QLabel" name="labl_title">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>40</y>
-      <width>701</width>
+      <x>0</x>
+      <y>60</y>
+      <width>711</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Dingbats</family>
       <pointsize>18</pointsize>
       <weight>75</weight>
       <bold>true</bold>
@@ -139,6 +140,31 @@
     </property>
     <property name="alignment">
      <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="labl_title_2">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>30</y>
+      <width>711</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Kedage</family>
+      <pointsize>22</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
+      <kerning>true</kerning>
+     </font>
+    </property>
+    <property name="text">
+     <string>Gestion de cinéma</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter|Qt::AlignTop</set>
     </property>
    </widget>
   </widget>
