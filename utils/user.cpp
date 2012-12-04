@@ -24,8 +24,6 @@ bool User::isRealUser(string user, string passwd)
 		u_name.insert(0, User::getUser(ids.at(i)));
 		u_passwd.insert(0, User::getUserPass(ids.at(i)));
 
-		std::cout << "Comparaison : " << u_name << " pass : " << u_passwd << std::endl;
-
 		if(u_name.compare(user) == 0 && u_passwd.compare(passwd) == 0)
 			return true;
 
