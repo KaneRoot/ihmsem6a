@@ -1,7 +1,7 @@
 #ifndef __PLANNING_H__
 #define __PLANNING_H__
 
-#define PLANNING_FILE_NAME "../data/planning"
+#define PLANNING_FILE_NAME "data/planning"
 
 #define PLANNING_ID_ID				0
 #define PLANNING_SALLE_ID			1

@@ -1,7 +1,7 @@
 #ifndef __SALLE_H__
 #define __SALLE_H__
 
-#define SALLES_FILE_NAME "../data/salles"
+#define SALLES_FILE_NAME "data/salles"
 
 #include <vector>
 #include <iostream>

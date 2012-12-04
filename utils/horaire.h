@@ -1,7 +1,7 @@
 #ifndef __HORAIRE_H__
 #define __HORAIRE_H__
 
-#define HORAIRES_FILE_NAME "../data/creneaux"
+#define HORAIRES_FILE_NAME "data/creneaux"
 
 #include <vector>
 #include <iostream>

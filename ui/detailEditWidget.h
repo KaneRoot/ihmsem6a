@@ -8,10 +8,10 @@
 
 #include "../utils/film.h"
 
-#define MODE_CREATE
-#define MODE_EDIT
+#define MODE_CREATE 1125
+#define MODE_EDIT 1124
 
-class DetailEditWidget: public QWidget, private Ui::detailEditWidget
+class DetailEditWidget: public QWidget, private Ui::detailEditForm
 {
 	Q_OBJECT
 	public:

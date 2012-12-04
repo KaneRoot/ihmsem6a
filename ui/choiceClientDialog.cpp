@@ -21,6 +21,20 @@ ChoiceClientDialog::~ChoiceClientDialog()
 void ChoiceClientDialog::setFilm(Film* film)
 {
 	this->film = film;
+
+	for (int i=0;i<horaireComboBox->count();i++)
+	{
+		horaireComboBox->removeItem(0);
+	}
+
+	vector<int> liste = film->getHorairesLibres();
+	vector<int>::iterator it;
+	Horaire::init();
+	for (it=liste.begin();it!=liste.end();it++)
+	{
+		horaireComboBox->addItem(QString::fromUtf8(Horaire::getHoraire(*it).c_str()),
+				QVariant(*it));
+	}	
 }
 
 void ChoiceClientDialog::toDetail()

@@ -61,9 +61,27 @@ void ListeWidget::showDetail()
 	}
 }
 
+QToolBox* ListeWidget::getToolBox()
+{
+	return this->toolbox;
+}
+
 int ListeWidget::getMode()
 {
 	return this->mode;
+}
+
+vector<Film> ListeWidget::getFilmsSelect()
+{
+	vector<Film> vectorFilms;
+	return vectorFilms;
+}
+
+Film* ListeWidget::getFilmSelect()
+{	
+	int i=0;
+	for (i=0;!boutons.at(i)->isChecked();i++);
+	return &(films.at(i));
 }
 
 

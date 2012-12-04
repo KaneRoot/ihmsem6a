@@ -22,6 +22,7 @@ class DetailWidget : public QWidget, private Ui::DetailForm
 		QToolBox* getToolBox();
 		void load(Film* f);
 	private:
+		void cleanCombo();
 		Film *film;
 		QWidget* brother;
 		QToolBox* toolBox;

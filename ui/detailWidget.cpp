@@ -18,6 +18,9 @@ DetailWidget::~DetailWidget()
 void DetailWidget::load(Film* f)
 {
 	film = f;
+
+	cleanCombo();
+
 	labelTitle->setText(QString::fromUtf8(film->getName().c_str()));
 	textSynopsis->setText(QString::fromUtf8(film->getSynopsis().c_str()));
 	string casting = "";
@@ -30,7 +33,7 @@ void DetailWidget::load(Film* f)
 	}
 	textEdit->setText(QString::fromUtf8(casting.c_str()));
 
-	vector<int> liste = film->getHoraires();
+	vector<int> liste = film->getHorairesLibres();
 	vector<int>::iterator it;
 	Horaire::init();
 	for (it=liste.begin();it!=liste.end();it++)
@@ -41,6 +44,13 @@ void DetailWidget::load(Film* f)
 
 }
 
+void DetailWidget::cleanCombo()
+{
+	for (int i =0;i<comboBox->count();i++)
+	{
+		comboBox->removeItem(0);
+	}
+}
 
 void DetailWidget::setBrother(QWidget* bro)
 {
