@@ -23,6 +23,7 @@ class ListeWidget: public QWidget, private Ui::ListeForm
 		ListeWidget(QToolBox* toolBox,int mode,QWidget* parent=0);
 		~ListeWidget();
 		void load();
+		void clean();
 		int getMode();
 		QToolBox* getToolBox();
 		vector<Film> getFilmsSelect();

@@ -8,20 +8,30 @@ ListeWidget::ListeWidget(QToolBox* toolBox,int mode,QWidget* parent):QWidget(par
 	this->toolbox=toolBox;
 	this->mode=mode;
 	this->dialClient=NULL;
+	layout = new QGridLayout;
 	load();
 }
 
 ListeWidget::~ListeWidget()
 {}
 
-
+void ListeWidget::clean()
+{
+	vector<QButtonImproved*>::iterator it;
+	for (it=boutons.begin();it!=boutons.end();it++)
+	{
+		layout->removeWidget(it);
+	}
+}
 
 void ListeWidget::load()
 {
+	clean();
+
 	this->setContentsMargins(20,20,20,20);
 	films = Film::getFilms();
 	vector<Film>::iterator it;
-	layout = new QGridLayout;
+	//layout = new QGridLayout;
 	
 	int i=0,j=0;
 	for (it=films.begin();it!=films.end();it++)
@@ -31,8 +41,7 @@ void ListeWidget::load()
 					this,i));
 		boutons.at(boutons.size()-1)->setCheckable(
 				getMode()==MODE_ADMIN);
-		
-
+	
 		boutons.at(boutons.size()-1)->setVisible(true);
 		QObject::connect(boutons.at(boutons.size()-1),SIGNAL(clicked()),
 				this, SLOT(showDetail()));
