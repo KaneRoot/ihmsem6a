@@ -17,8 +17,7 @@ ListeWidget::~ListeWidget()
 
 void ListeWidget::clean()
 {
-	//vector<QButtonImproved*>::iterator it;
-	for (int i=0;i<boutons.size();i++)//(it=boutons.begin();it!=boutons.end();it++)
+	for (int i=0;i<boutons.size();i++)
 	{
 		layout->removeWidget(boutons.at(i));
 	}
@@ -94,7 +93,7 @@ Film* ListeWidget::getFilmSelect()
 {	
 	int i=0;
 	for (i=0;!boutons.at(i)->isChecked();i++);
-	return &(films.at(i));
+	return &(films.at(boutons.at(i)->getId()));
 }
 
 
