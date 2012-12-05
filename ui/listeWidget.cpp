@@ -101,7 +101,7 @@ Film* ListeWidget::getFilmSelect()
 	if (i==boutons.size())
 		return (Film*)NULL;
 	else
-		return &(films.at(boutons.at(i)->getId()));
+		return &(films.at(i));
 }
 
 

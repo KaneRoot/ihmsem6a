@@ -71,6 +71,7 @@ void FrameAdmin::toDelete()
 		return;
 	}
 	//cout << f-> <<"\n";
+
 	Film::delFilm(f->getId());
 	Film::save();
 
