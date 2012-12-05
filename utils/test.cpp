@@ -42,6 +42,7 @@ void film_test()
 	cout << "Film name : " << film.getName() << endl;
 	film.save();
 }
+
 void get_films()
 {
 	vector<Film> films = Film::getFilms();
@@ -65,10 +66,55 @@ void utilisateurs()
 void search_films()
 {
 	Film::init();
-	string expression("test");
+	string expression("pas copain");
 	vector<Film> films = Film::getFilms_search_name(expression);
 	for(size_t i(0) ; i < films.size() ; i++)
-		cout << films.at(i).getName() << endl;
+	{
+		cout << "Nom film : " << films.at(i).getName() << endl;
+		cout << "Acteurs : " << films.at(i).getActorsString() << endl;
+	}
+}
+
+void test_planning()
+{
+}
+
+void ajout_acteur()
+{
+	vector<Film> films = Film::getFilms_search_name("pas copain");
+	for(size_t i(0) ; i < films.size(); i++)
+	{
+		cout << "ON a trouvé un film !!!!!!" << endl;
+		films.at(i).addActor("Jean Paul");
+	}
+	Film::save();
+	search_films();
+}
+
+void del_film()
+{
+	Film::init();
+	string expression("pas copain");
+	vector<Film> films = Film::getFilms_search_name(expression);
+	for(size_t i(0) ; i < films.size() ; i++)
+	{
+		cout << "Nom film : " << films.at(i).getName() << endl;
+		cout << "Acteurs : " << films.at(i).getActorsString() << endl;
+		cout << "On delete " << endl;
+		Film::delFilm(films.at(i).getId());
+	}
+	Film::save();
+}
+
+void add_film()
+{
+	del_film();
+	vector<string> acteurs;
+	acteurs.push_back("Chon Coe"); acteurs.push_back("The destroyer"); acteurs.push_back("Mimie Matthie");
+	Film::addFilm( "pas copain", 1, false, "5h","the synopsis",  
+					acteurs, "Le réalisateur" , 50);
+	Film::save();
+	search_films();
 }
 
 int main(int argc, char **argv)
@@ -76,6 +122,10 @@ int main(int argc, char **argv)
 	//file_utils();
 	//film_test();
 	//get_films();
-	utilisateurs();
+	//utilisateurs();
 	//search_films();
+	//test_planning();
+	//ajout_acteur();
+	//del_film();
+	add_film();
 }
