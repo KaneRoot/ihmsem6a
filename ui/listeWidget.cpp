@@ -96,8 +96,12 @@ vector<Film> ListeWidget::getFilmsSelect()
 Film* ListeWidget::getFilmSelect()
 {	
 	int i=0;
-	for (i=0;!boutons.at(i)->isChecked();i++);
-	return &(films.at(boutons.at(i)->getId()));
+	for (i=0;!boutons.at(i)->isChecked()&&
+			i<boutons.size();i++);
+	if (i==boutons.size())
+		return (Film*)NULL;
+	else
+		return &(films.at(boutons.at(i)->getId()));
 }
 
 
