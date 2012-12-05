@@ -17,7 +17,6 @@ FrameAdmin::FrameAdmin(QWidget* parent):QFrame(parent),Ui::FormAdmin()
 	QObject::connect(btn_ajout,SIGNAL(clicked()),this,SLOT(toCreate()));
 	QObject::connect(btn_editer,SIGNAL(clicked()),this,SLOT(toEdit()));
 	QObject::connect(btn_sup,SIGNAL(clicked()),this,SLOT(toDelete()));
-
 }
 
 FrameAdmin::~FrameAdmin()
@@ -64,6 +63,15 @@ void FrameAdmin::toCreate()
 void FrameAdmin::toDelete()
 {
 	//TODO Supprimer film
+	Film* f = NULL;
+	f = liste->getFilmSelect();
+	if (f==NULL)
+	{
+		cout << "Mauvaise sélection\n";
+		return;
+	}
+	Film::delFilm(f->getId());
+	liste->load();
 }
 
 

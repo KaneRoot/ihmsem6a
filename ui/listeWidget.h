@@ -31,6 +31,7 @@ class ListeWidget: public QWidget, private Ui::ListeForm
 		vector<QButtonImproved*> boutons;
 		vector<Film> films;
 		QToolBox* toolbox;
+		QGridLayout* layout;
 		ChoiceClientDialog* dialClient;
 		int mode;
 	private slots:

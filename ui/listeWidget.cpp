@@ -14,12 +14,14 @@ ListeWidget::ListeWidget(QToolBox* toolBox,int mode,QWidget* parent):QWidget(par
 ListeWidget::~ListeWidget()
 {}
 
+
+
 void ListeWidget::load()
 {
 	this->setContentsMargins(20,20,20,20);
 	films = Film::getFilms();
 	vector<Film>::iterator it;
-	QGridLayout * layout = new QGridLayout;
+	layout = new QGridLayout;
 	
 	int i=0,j=0;
 	for (it=films.begin();it!=films.end();it++)
