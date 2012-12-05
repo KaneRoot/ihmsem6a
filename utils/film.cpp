@@ -17,12 +17,7 @@ Film::Film(int ident) : id(ident)
 
 vector<Film> Film::getFilms()
 {
-	if(fu == NULL)
-	{
-		string f(MOVIE_FILE_NAME);
-		Film::fu = new FileUtils(f) ;
-		Film::fu->init();
-	}
+	Film::init();
 	vector<Film> films;
 	vector<int> identifiants = Film::fu->getIDs();
 	for(unsigned int i(0) ; i < identifiants.size() ; i++)
@@ -68,6 +63,7 @@ string Film::getSynopsis()
 
 vector<string> Film::getActors()
 {
+	Film::init();
 	vector<string> actors;
 	string tmp(Film::fu->get(id, MOVIE_ACTORS_ID));
 	split( actors, tmp, is_any_of( "::" ) );
@@ -76,6 +72,7 @@ vector<string> Film::getActors()
 
 string Film::getActorsString()
 {
+	Film::init();
 	ostringstream stream;
 	vector<string> actors = getActors();
 	for(unsigned int i(0) ; i < actors.size() ; i++)
@@ -85,6 +82,7 @@ string Film::getActorsString()
 
 string Film::getRealisator()
 {
+	Film::init();
 	return Film::fu->get(id, MOVIE_REAL_ID);
 }
 
@@ -157,11 +155,13 @@ void Film::setRealisator(string realisator)
 
 void Film::save()
 {
+	Film::init();
 	Film::fu->write();
 }
 
 vector<Film> Film::getFilms_search_name(string expression)
 {
+	Film::init();
 	vector<int> movies_ids = Film::getFilmsIds_search_name(expression);
 	vector<Film> movies;
 	for(size_t i(0) ; i < movies_ids.size() ; i++)
@@ -173,6 +173,7 @@ vector<Film> Film::getFilms_search_name(string expression)
 
 vector<int> Film::getFilmsIds_search_name(string expression)
 {
+	Film::init();
 	vector<int> movies_concerned;
 	vector<int> films_ids = Film::fu->getIDs();
 	for(size_t i(0) ; i < films_ids.size() ; i++)
@@ -219,6 +220,7 @@ void Film::addFilm(
 				string realisator, 
 				int base_price)
 {
+	Film::init();
 	ostringstream actors_string;
 	for(size_t i(0) ; i < actors.size() ; i++)
 		actors_string << actors.at(i) << "::";
@@ -234,4 +236,9 @@ void Film::addFilm(
 	movie_to_add.push_back(lexical_cast<string>(base_price));
 
 	Film::fu->add(movie_to_add);
+}
+void Film::delFilm(int id)
+{
+	Film::init();
+	Film::fu->del(id);
 }
