@@ -20,7 +20,7 @@ void ListeWidget::clean()
 	vector<QButtonImproved*>::iterator it;
 	for (it=boutons.begin();it!=boutons.end();it++)
 	{
-		layout->removeWidget(it);
+		layout->removeWidget((QWidget*)it);
 	}
 }
 
