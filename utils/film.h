@@ -31,6 +31,7 @@ class Film
 
 		static void init();
 
+		int getId();
 		string getName();
 		bool is3d();
 		int getTypeId();
@@ -47,6 +48,7 @@ class Film
 		void setBasePrice(int base_price);
 		void setSynopsis(string s);
 		void setActors(vector<string> actors);
+		void addActor(string actor);
 		void setActors(string actors);
 		void setRealisator(string realisator);
 		vector<int> getHoraires();

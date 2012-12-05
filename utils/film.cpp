@@ -15,6 +15,11 @@ Film::Film(int ident) : id(ident)
 	Film::init();
 }
 
+int Film::getId()
+{
+	return id;
+}
+
 vector<Film> Film::getFilms()
 {
 	Film::init();
@@ -64,9 +69,13 @@ string Film::getSynopsis()
 vector<string> Film::getActors()
 {
 	Film::init();
+	vector<string> actors_tmp;
 	vector<string> actors;
 	string tmp(Film::fu->get(id, MOVIE_ACTORS_ID));
-	split( actors, tmp, is_any_of( "::" ) );
+	split( actors_tmp, tmp, is_any_of( "::" ) );
+	for(size_t i(0) ; i < actors_tmp.size() ; i++)
+		if(actors_tmp.at(i).size() > 0)
+			actors.push_back(actors_tmp.at(i));
 	return actors;
 }
 
@@ -132,7 +141,8 @@ void Film::setActors(vector<string> actors)
 	ostringstream stream;
 	for(unsigned int i(0) ; i < actors.size() ; i++)
 	{
-		stream << actors.at(i) << "::";
+		if(actors.at(i).size() > 0)
+			stream << actors.at(i) << "::";
 	}
 	setActors(stream.str());
 }
@@ -237,6 +247,17 @@ void Film::addFilm(
 
 	Film::fu->add(movie_to_add);
 }
+
+void Film::addActor(string actor)
+{
+	if(id != -1)
+	{
+		vector<string> actors = getActors();
+		actors.push_back(actor);
+		setActors(actors);
+	}
+}
+
 void Film::delFilm(int id)
 {
 	Film::init();
