@@ -17,10 +17,10 @@ ListeWidget::~ListeWidget()
 
 void ListeWidget::clean()
 {
-	vector<QButtonImproved*>::iterator it;
-	for (it=boutons.begin();it!=boutons.end();it++)
+	//vector<QButtonImproved*>::iterator it;
+	for (int i=0;i<boutons.size();i++)//(it=boutons.begin();it!=boutons.end();it++)
 	{
-		layout->removeWidget((QWidget*)it);
+		layout->removeWidget(boutons.at(i));
 	}
 }
 
