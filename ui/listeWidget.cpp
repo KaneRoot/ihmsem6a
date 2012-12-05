@@ -8,7 +8,7 @@ ListeWidget::ListeWidget(QToolBox* toolBox,int mode,QWidget* parent):QWidget(par
 	this->toolbox=toolBox;
 	this->mode=mode;
 	this->dialClient=NULL;
-	layout = new QGridLayout;
+	//layout = new QGridLayout;
 	load();
 }
 
@@ -21,6 +21,7 @@ void ListeWidget::clean()
 	{
 		layout->removeWidget(boutons.at(i));
 	}
+
 	boutons.clear();
 	films.clear();
 }
@@ -32,7 +33,7 @@ void ListeWidget::load()
 	this->setContentsMargins(20,20,20,20);
 	films = Film::getFilms();
 	vector<Film>::iterator it;
-	//layout = new QGridLayout;
+	layout = new QGridLayout;
 	
 	int i=0,j=0;
 	for (it=films.begin();it!=films.end();it++)
@@ -55,6 +56,8 @@ void ListeWidget::load()
 			j++;
 		}
 	}
+
+
 	this->setLayout(layout);
 }
 
