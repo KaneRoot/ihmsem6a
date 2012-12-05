@@ -22,6 +22,8 @@ void ListeWidget::clean()
 	{
 		layout->removeWidget(boutons.at(i));
 	}
+	boutons.clear();
+	films.clear();
 }
 
 void ListeWidget::load()
