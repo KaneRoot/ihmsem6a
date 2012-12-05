@@ -70,7 +70,9 @@ void FrameAdmin::toDelete()
 		cout << "Mauvaise sélection\n";
 		return;
 	}
+	//cout << f-> <<"\n";
 	Film::delFilm(f->getId());
+	Film::save();
 	liste->load();
 }
 
