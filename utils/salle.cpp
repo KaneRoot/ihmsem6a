@@ -13,9 +13,14 @@ void Salle::init()
 	}
 }
 
+bool Salle::isSalleExists(int id)
+{
+	Salle::init();
+	return Salle::fu->isIdExists(id);
+}
+
 int Salle::getNbPlaces(int id)
 {
 	Salle::init();
 	return lexical_cast<int>(fu->get(id,1));
 }
-

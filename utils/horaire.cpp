@@ -13,8 +13,20 @@ void Horaire::init()
 	}
 }
 
+vector<int> Horaire::getHorairesId()
+{
+	Horaire::init();
+	return Horaire::fu->getIDs();
+}
+
 string Horaire::getHoraire(int id)
 {
 	Horaire::init();
 	return Horaire::fu->get(id, 1);
+}
+
+bool Horaire::isHoraireExists(int id)
+{
+	Horaire::init();
+	return Horaire::fu->isIdExists(id);
 }

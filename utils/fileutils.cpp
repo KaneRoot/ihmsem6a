@@ -104,6 +104,15 @@ void FileUtils::set(int id, int column, string s)
 	lines[id][column] = s;
 }
 
+bool FileUtils::isIdExists(int id)
+{
+	vector<int> ids = getIDs();
+	for(size_t i(0) ; i < ids.size() ; i++)
+		if(ids.at(i) == id)
+			return true;
+	return false;
+}
+
 void FileUtils::write()
 {
 	ofstream ofs;

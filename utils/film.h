@@ -62,6 +62,7 @@ class Film
 						vector<string> actors, string realisator, int base_price);
 		static void delFilm(int id);
 
+		static bool isFilmExists(int id);
 		static void save();
 
 	private :

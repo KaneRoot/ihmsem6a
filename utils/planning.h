@@ -1,11 +1,11 @@
 #ifndef __PLANNING_H__
 #define __PLANNING_H__
 
-#define PLANNING_FILE_NAME "data/planning"
+#define PLANNING_FILE_NAME "./data/planning"
 
 #define PLANNING_ID_ID				0
-#define PLANNING_SALLE_ID			1
-#define PLANNING_FILM_ID			2
+#define PLANNING_FILM_ID			1
+#define PLANNING_SALLE_ID			2
 #define PLANNING_HORAIRE_ID			3
 #define PLANNING_PLACES_PRISES_ID	4
 
@@ -13,6 +13,8 @@
 #include <iostream>
 #include "fileutils.h"
 #include "salle.h"
+#include "film.h"
+#include "horaire.h"
 
 using namespace std;
 
@@ -21,6 +23,7 @@ class Planning
 	public :	
 		static void init();
 		static int getId(int id_film, int id_salle, int id_horaire);
+		static int getId(int id_salle, int id_horaire);
 		static bool reserverPlace(int id_film, int id_salle, int id_horaire);
 		static bool reserverPlace(int id_film, int id_salle, int id_horaire, int nb);
 		static int getNbPlacesPrises(int id_film, int id_salle, int id_horaire);
@@ -29,7 +32,9 @@ class Planning
 		static vector<int> getHorairesLibresFilm(int id_film);
 		static int getNbPlacesRestantes(int id_film, int id_salle, int id_horaire);
 
-		static bool addHoraireFilm(int id_film, int id_salle, int id_horaire); // TODO
+		static vector<int> getIDs();
+		static bool isSalleFree(int id_salle, int horaire);
+		static bool addHoraireFilm(int id_film, int id_salle, int id_horaire);
 		static void save();
 
 	private :

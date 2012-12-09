@@ -258,6 +258,12 @@ void Film::addActor(string actor)
 	}
 }
 
+bool Film::isFilmExists(int id)
+{
+	Film::init();
+	return Film::fu->isIdExists(id);
+}
+
 void Film::delFilm(int id)
 {
 	Film::init();

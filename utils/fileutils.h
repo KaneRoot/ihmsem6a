@@ -28,6 +28,7 @@ class FileUtils
 		void set(int id, int column, string s);
 		void write(); // écrire tout ça dans le fichier
 
+		bool isIdExists(int id);
 		vector<int> getIDs();
 
 	private :

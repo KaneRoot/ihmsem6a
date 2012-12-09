@@ -1,7 +1,7 @@
 #ifndef __HORAIRE_H__
 #define __HORAIRE_H__
 
-#define HORAIRES_FILE_NAME "data/creneaux"
+#define HORAIRES_FILE_NAME "./data/creneaux"
 
 #include <vector>
 #include <iostream>
@@ -14,7 +14,8 @@ class Horaire
 	public :	
 		static void init();
 		static string getHoraire(int id);
-		static vector<int> getHorairesId();	// TODO
+		static vector<int> getHorairesId();
+		static bool isHoraireExists(int id);
 
 	private :
 		static FileUtils * fu;

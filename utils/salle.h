@@ -14,6 +14,7 @@ class Salle
 		static void init();
 		static int getNbPlaces(int id);
 		static vector<int> getSalles(); // TODO
+		static bool isSalleExists(int id);
 		static void save();
 
 	private :

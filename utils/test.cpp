@@ -75,10 +75,6 @@ void search_films()
 	}
 }
 
-void test_planning()
-{
-}
-
 void ajout_acteur()
 {
 	vector<Film> films = Film::getFilms_search_name("pas copain");
@@ -117,6 +113,33 @@ void add_film()
 	search_films();
 }
 
+void get_horaires_ids()
+{
+	vector<int> hids = Horaire::getHorairesId();
+	cout << "Horaire ID : " ;
+	for(size_t i(0) ; i < hids.size() ; i++)
+	{
+		cout << " " << hids.at(i);
+	}
+	cout << endl;
+}
+
+void add_horaire_film(int argc, char **argv)
+{
+	Planning::init();
+	if(argc != 4)
+	{
+		cout << "./main id_film id_salle id_horaire" << endl;
+		return;
+	}
+	int id_film = lexical_cast<int>(argv[1]);
+	int id_salle = lexical_cast<int>(argv[2]);
+	int id_horaire = lexical_cast<int>(argv[3]);
+	//cout << "Salle " << id_salle << " horaire : " << id_horaire << " : " << Planning::isSalleFree(id_salle, id_horaire) << endl;
+
+	Planning::addHoraireFilm(id_film, id_salle, id_horaire);
+}
+
 int main(int argc, char **argv)
 {
 	//file_utils();
@@ -127,5 +150,7 @@ int main(int argc, char **argv)
 	//test_planning();
 	//ajout_acteur();
 	//del_film();
-	add_film();
+	//add_film();
+	//get_horaires_ids();
+	add_horaire_film(argc, argv);
 }
