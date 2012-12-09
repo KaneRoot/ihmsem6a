@@ -93,6 +93,7 @@ int Planning::getNbPlacesRestantes(int id_film, int id_salle, int id_horaire)
 	int prises = getNbPlacesPrises(id_film, id_salle, id_horaire);
 	return Salle::getNbPlaces(id_salle) - prises;
 }
+
 int Planning::getNbPlacesPrises(int id_film, int id_salle, int id_horaire)
 {
 	int id = getId(id_film, id_salle, id_horaire);

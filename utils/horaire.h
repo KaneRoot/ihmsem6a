@@ -14,6 +14,7 @@ class Horaire
 	public :	
 		static void init();
 		static string getHoraire(int id);
+		static vector<int> getHorairesId();	// TODO
 
 	private :
 		static FileUtils * fu;

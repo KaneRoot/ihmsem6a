@@ -13,8 +13,7 @@ class Salle
 	public :
 		static void init();
 		static int getNbPlaces(int id);
-		static int getNbPlacesPrises(int id);
-		static void reserverPlace(int id);
+		static vector<int> getSalles(); // TODO
 		static void save();
 
 	private :

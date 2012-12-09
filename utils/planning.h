@@ -28,6 +28,8 @@ class Planning
 		static vector<int> getHorairesFilm(int id_film);
 		static vector<int> getHorairesLibresFilm(int id_film);
 		static int getNbPlacesRestantes(int id_film, int id_salle, int id_horaire);
+
+		static bool addHoraireFilm(int id_film, int id_salle, int id_horaire); // TODO
 		static void save();
 
 	private :

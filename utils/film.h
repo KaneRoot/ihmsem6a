@@ -57,6 +57,7 @@ class Film
 		static vector<Film> getFilms();
 		static vector<Film> getFilms_search_name(string expression);
 		static vector<int> getFilmsIds_search_name(string s);
+
 		static void addFilm( string name, int id_type, bool is3d, string duree, string synopsis,  
 						vector<string> actors, string realisator, int base_price);
 		static void delFilm(int id);

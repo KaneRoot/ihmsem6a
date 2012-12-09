@@ -50,7 +50,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>20</y>
+       <y>200</y>
        <width>100</width>
        <height>70</height>
       </rect>
@@ -63,7 +63,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>180</y>
+       <y>360</y>
        <width>100</width>
        <height>70</height>
       </rect>
@@ -76,7 +76,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>100</y>
+       <y>280</y>
        <width>100</width>
        <height>70</height>
       </rect>
@@ -89,13 +89,84 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>400</y>
+       <y>470</y>
        <width>100</width>
        <height>70</height>
       </rect>
      </property>
      <property name="text">
       <string>Quitter</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_projection">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>101</width>
+       <height>41</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>En projection</string>
+     </property>
+     <property name="checkable">
+      <bool>true</bool>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="btn_reserver">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>90</y>
+       <width>101</width>
+       <height>71</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Réserver</string>
+     </property>
+    </widget>
+    <widget class="Line" name="line">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>450</y>
+       <width>118</width>
+       <height>3</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_2">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>170</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+    <widget class="Line" name="line_3">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>70</y>
+       <width>121</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </widget>
@@ -117,8 +188,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>671</width>
-      <height>497</height>
+      <width>681</width>
+      <height>505</height>
      </rect>
     </property>
     <attribute name="label">
@@ -130,8 +201,8 @@
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>671</width>
-      <height>497</height>
+      <width>681</width>
+      <height>505</height>
      </rect>
     </property>
     <attribute name="label">
