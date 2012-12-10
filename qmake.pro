@@ -18,7 +18,8 @@ HEADERS += utils/fileutils.h\
 			ui/detailWidget.h\
 			ui/listeWidget.h\
 			ui/paiementWidget.h\
-			ui/detailEditWidget.h
+			ui/detailEditWidget.h\
+			ui/ticketDialog.h
 SOURCES += utils/fileutils.cpp\
 			utils/type.cpp\
 			utils/salle.cpp\
@@ -36,6 +37,7 @@ SOURCES += utils/fileutils.cpp\
 			ui/listeWidget.cpp\
 			ui/paiementWidget.cpp\
 			ui/detailEditWidget.cpp\
+			ui/ticketDialog.cpp\
 		 	main.cpp
 FORMS += ui/accueil.ui\
 		 ui/connectionBox.ui\
@@ -46,3 +48,4 @@ FORMS += ui/accueil.ui\
 		 ui/detailWidget.ui\
 		 ui/detailEditWidget.ui\
 		 ui/paiementWidget.ui\
+		 ui/ticket.ui

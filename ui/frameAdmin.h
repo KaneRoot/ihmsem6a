@@ -9,6 +9,7 @@
 #include "listeWidget.h"
 #include "detailEditWidget.h"
 
+
 class FrameAdmin:public QFrame, private Ui::FormAdmin
 {
 	Q_OBJECT

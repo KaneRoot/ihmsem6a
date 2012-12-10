@@ -4,6 +4,7 @@
 
 #include "ui_paiementWidget.h"
 #include "../utils/film.h"
+#include "ticketDialog.h"
 
 #include <QToolBox>
 

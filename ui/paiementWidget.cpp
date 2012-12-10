@@ -11,6 +11,7 @@ PaiementWidget::PaiementWidget(string abo, int nbtickets,Film* f,
 	this->nbTickets=nbtickets;
 
 	QObject::connect(cancelButton,SIGNAL(clicked()),this,SLOT(close()));
+	QObject::connect(payerButton,SIGNAL(clicked()),this,SLOT(buy()));
 }
 
 PaiementWidget::PaiementWidget(string abo, int nbtickets,int idfilm,
@@ -40,8 +41,12 @@ void PaiementWidget::buy()
 {
 	if (checkValue())
 	{
-		this->close();
-		((QDialog*)this->parentWidget())->close();
+		TicketDialog* td = new TicketDialog("Un grand film",
+				"Salle 3","17h15","1h10","Aucun","1",toolBox,this);
+		td->show();
+		this->setVisible(false);
+		//this->close();
+		//((QDialog*)this->parentWidget())->close();
 	}
 }
 
