@@ -90,8 +90,10 @@ vector<string> FileUtils::add(vector<string> v)
 
 void FileUtils::del(int id)
 {
-	lines[id].clear();
+	//lines[id].clear();
+	cout << "TAILLE LINES AVANT :  " << lines.size() << endl;
 	lines.erase(id);
+	cout << "TAILLE LINES APRÈS :  " << lines.size() << endl;
 }
 
 void FileUtils::set(int id, vector<string> v)
@@ -118,14 +120,17 @@ void FileUtils::write()
 {
 	ofstream ofs;
 	ofs.open(filename.c_str());
-	for(unsigned int i(0) ; i < lines.size() ; i++)
+	map<int, vector<string> >::iterator it;
+	for(it = lines.begin() ; it != lines.end() ; it++)
 	{
-		if(lines.at(i).size() > 1)
+		//cout << " id " << it->first << endl;
+		if(it->second.size() > 1)
 		{
-			for(unsigned int j(0) ; j < lines.at(i).size() ; j++)
+		//	cout << "non bug" << endl;
+			for(unsigned int j(0) ; j < it->second.size() ; j++)
 			{
-				ofs << lines.at(i).at(j);
-				if(((unsigned int)j + 1) != lines.at(i).size())
+				ofs << it->second.at(j);
+				if(((unsigned int)j + 1) != it->second.size())
 					ofs << ";";
 			}
 			ofs << endl;

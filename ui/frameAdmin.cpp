@@ -92,7 +92,7 @@ void FrameAdmin::toDelete()
 		cout << "Mauvaise sélection\n";
 		return;
 	}
-	//cout << f-> <<"\n";
+	//cout << "film à supprimer : " << f->getName() << endl;
 
 	Film::delFilm(f->getId());
 	Film::save();
