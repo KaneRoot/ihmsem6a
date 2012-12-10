@@ -7,6 +7,7 @@
 #include <boost/regex.hpp>
 
 #include "fileutils.h"
+#include "horaire.h"
 #include "type.h"
 #include "planning.h"
 
@@ -51,11 +52,14 @@ class Film
 		void addActor(string actor);
 		void setActors(string actors);
 		void setRealisator(string realisator);
+
+		string getHorairesString();
 		vector<int> getHoraires();
 		vector<int> getHorairesLibres();
 
 		static vector<Film> getFilms();
 		static vector<Film> getFilms_search_name(string expression);
+		static vector<Film> getFilmsEnProjection();
 		static vector<int> getFilmsIds_search_name(string s);
 
 		static void addFilm( string name, int id_type, bool is3d, string duree, string synopsis,  

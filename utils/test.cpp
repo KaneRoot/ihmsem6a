@@ -140,6 +140,18 @@ void add_horaire_film(int argc, char **argv)
 	Planning::addHoraireFilm(id_film, id_salle, id_horaire);
 }
 
+void test_films_en_projection()
+{
+	vector<Film> films_en_projection = Film::getFilmsEnProjection();
+	Film tmp;
+	for(size_t i(0) ; i < films_en_projection.size() ; i++)
+	{
+		tmp = films_en_projection.at(i);
+		cout << "Film : " << tmp.getId() << " : " << tmp.getName() << " :: horaires : " << tmp.getHorairesString() << endl;
+	}
+
+}
+
 int main(int argc, char **argv)
 {
 	//file_utils();
@@ -152,5 +164,6 @@ int main(int argc, char **argv)
 	//del_film();
 	//add_film();
 	//get_horaires_ids();
-	add_horaire_film(argc, argv);
+	//add_horaire_film(argc, argv);
+	test_films_en_projection();
 }

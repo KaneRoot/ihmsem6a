@@ -220,6 +220,17 @@ vector<int> Film::getHorairesLibres()
 	return Planning::getHorairesLibresFilm(id);
 }
 
+string Film::getHorairesString()
+{
+	vector<int> horaires = getHoraires();
+	ostringstream stream;
+	for(size_t i(0) ; i < horaires.size() ; i++)
+	{
+		stream << Horaire::getHoraire(horaires.at(i)) << " ";
+	}
+	return stream.str();
+}
+
 void Film::addFilm(
 				string name, 
 				int id_type, 
@@ -262,6 +273,21 @@ bool Film::isFilmExists(int id)
 {
 	Film::init();
 	return Film::fu->isIdExists(id);
+}
+
+vector<Film> Film::getFilmsEnProjection()
+{
+	Film::init();
+	vector<Film> films_en_projection;
+	
+	vector<Film> tous_les_films = getFilms();
+	for(size_t i(0) ; i < tous_les_films.size() ; i++)
+	{
+		if(tous_les_films.at(i).getHoraires().size() != 0)
+			films_en_projection.push_back(tous_les_films.at(i));
+	}
+
+	return films_en_projection;
 }
 
 void Film::delFilm(int id)
