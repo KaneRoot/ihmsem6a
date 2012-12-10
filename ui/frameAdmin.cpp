@@ -17,10 +17,32 @@ FrameAdmin::FrameAdmin(QWidget* parent):QFrame(parent),Ui::FormAdmin()
 	QObject::connect(btn_ajout,SIGNAL(clicked()),this,SLOT(toCreate()));
 	QObject::connect(btn_editer,SIGNAL(clicked()),this,SLOT(toEdit()));
 	QObject::connect(btn_sup,SIGNAL(clicked()),this,SLOT(toDelete()));
+	QObject::connect(btn_projection,SIGNAL(clicked()),this,SLOT(switchMovies()));
+	QObject::connect(btn_reserver,SIGNAL(clicked()),this,SLOT(toReserv()));
 }
 
 FrameAdmin::~FrameAdmin()
 {}
+
+void FrameAdmin::toReserv()
+{
+	Film*f=NULL;
+	f = liste->getFilmSelect();
+	if (f==NULL)
+	{
+		cout << "Mauvais selection\n";
+		return;
+	}
+	ChoiceClientDialog* choice = new ChoiceClientDialog(this->toolBox,
+			this);
+	choice->show();		
+}
+
+void FrameAdmin::switchMovies()
+{
+	liste->switchMovies();
+	liste->load();
+}
 
 void FrameAdmin::toEdit()
 {

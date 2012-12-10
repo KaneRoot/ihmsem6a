@@ -8,7 +8,7 @@
 #include "ui_frameAdmin.h"
 #include "listeWidget.h"
 #include "detailEditWidget.h"
-
+#include "choiceClientDialog.h"
 
 class FrameAdmin:public QFrame, private Ui::FormAdmin
 {
@@ -23,6 +23,8 @@ class FrameAdmin:public QFrame, private Ui::FormAdmin
 		bool isEditShowed;
 		bool isCreateShowed;
 	private slots:
+		void toReserv();
+		void switchMovies();
 		void toEdit();
 		void toCreate();
 		void toDelete();
