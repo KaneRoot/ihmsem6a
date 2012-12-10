@@ -15,6 +15,7 @@ class Horaire
 		static void init();
 		static string getHoraire(int id);
 		static vector<int> getHorairesId();
+		static vector<string> getHorairesString();
 		static bool isHoraireExists(int id);
 
 	private :
