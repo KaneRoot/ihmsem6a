@@ -150,70 +150,24 @@
       <height>104</height>
      </rect>
     </property>
-    <widget class="QCheckBox" name="checkAll">
+    <widget class="QWidget" name="verticalLayoutWidget">
      <property name="geometry">
       <rect>
-       <x>20</x>
-       <y>0</y>
-       <width>251</width>
-       <height>23</height>
+       <x>-1</x>
+       <y>-1</y>
+       <width>291</width>
+       <height>111</height>
       </rect>
      </property>
-     <property name="text">
-      <string> Tout les horaires</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="checkAll_2">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>30</y>
-       <width>251</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>10h15</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="checkAll_3">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>60</y>
-       <width>251</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>11h15</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="checkAll_4">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>90</y>
-       <width>251</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>12h15</string>
-     </property>
-    </widget>
-    <widget class="QCheckBox" name="checkAll_5">
-     <property name="geometry">
-      <rect>
-       <x>20</x>
-       <y>120</y>
-       <width>251</width>
-       <height>23</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string> Tout les horaires</string>
-     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QCheckBox" name="checkAll">
+        <property name="text">
+         <string> Tout les horaires</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
   </widget>
