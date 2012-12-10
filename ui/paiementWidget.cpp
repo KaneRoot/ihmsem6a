@@ -41,7 +41,7 @@ void PaiementWidget::buy()
 {
 	if (checkValue())
 	{
-		TicketDialog* td = new TicketDialog("Un grand film",
+		TicketDialog* td = new TicketDialog(film->getName(),
 				"Salle 3","17h15","1h10","Aucun","1",toolBox,this);
 		td->show();
 		this->setVisible(false);
