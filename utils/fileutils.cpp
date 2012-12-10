@@ -91,6 +91,7 @@ vector<string> FileUtils::add(vector<string> v)
 void FileUtils::del(int id)
 {
 	lines[id].clear();
+	lines.erase(id);
 }
 
 void FileUtils::set(int id, vector<string> v)
