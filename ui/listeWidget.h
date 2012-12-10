@@ -15,6 +15,8 @@
 
 #define MODE_ADMIN 12321
 #define MODE_CLIENT 12421
+#define ALL_MOVIES 32423
+#define MOVIES ~ALL_MOVIES
 
 class ListeWidget: public QWidget, private Ui::ListeForm
 {
@@ -24,6 +26,7 @@ class ListeWidget: public QWidget, private Ui::ListeForm
 		~ListeWidget();
 		void load();
 		void clean();
+		void switchMovies();
 		int getMode();
 		QToolBox* getToolBox();
 		vector<Film> getFilmsSelect();
@@ -35,6 +38,7 @@ class ListeWidget: public QWidget, private Ui::ListeForm
 		QGridLayout* layout;
 		ChoiceClientDialog* dialClient;
 		int mode;
+		int viewMode;
 	private slots:
 		void showDetail();
 };

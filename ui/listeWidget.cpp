@@ -8,6 +8,7 @@ ListeWidget::ListeWidget(QToolBox* toolBox,int mode,QWidget* parent):QWidget(par
 	this->toolbox=toolBox;
 	this->mode=mode;
 	this->dialClient=NULL;
+	this->viewMode=MOVIES;
 	layout = new QGridLayout;
 	load();
 	this->setLayout(layout);
@@ -27,6 +28,11 @@ void ListeWidget::clean()
 	films.clear();
 }
 
+void ListeWidget::switchMovies()
+{
+	viewMode = ~viewMode;
+}
+
 void ListeWidget::load()
 {
 	clean();
@@ -34,7 +40,18 @@ void ListeWidget::load()
 		films.size() << "\n";
 
 	this->setContentsMargins(20,20,20,20);
-	films = Film::getFilms();
+	
+	if (viewMode==MOVIES)
+	{
+		// TODO Modife vers film diffuser
+		films = Film::getFilms();
+	}
+	else
+	{
+		cout << " TOUT LES FILM \n";
+		films = Film::getFilms();
+	}
+	
 	vector<Film>::iterator it;
 	
 	int i=0,j=0;
