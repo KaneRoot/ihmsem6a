@@ -165,7 +165,6 @@ void Film::setRealisator(string realisator)
 
 void Film::save()
 {
-	Film::init();
 	Film::fu->write();
 }
 
@@ -294,4 +293,16 @@ void Film::delFilm(int id)
 {
 	Film::init();
 	Film::fu->del(id);
+}
+
+void Film::afficher_tous_les_films()
+{
+	vector<Film> tous_les_films = getFilms();
+	Film tmp;
+	for(size_t i(0) ; i < tous_les_films.size() ; i++)
+	{
+		tmp = tous_les_films.at(i);
+		cout << "id : " << tmp.getId() << " ";
+		cout << "Nom : " << tmp.getName() << endl;
+	}
 }
