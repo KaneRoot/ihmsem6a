@@ -8,7 +8,7 @@ ChoiceClientDialog::ChoiceClientDialog(QToolBox* toolbox,QWidget*parent):
 	setupUi(this);
 	this->toolBox = toolbox;
 	this->isShowed = false;
-
+	
 	QObject::connect(cancelButton,SIGNAL(clicked()),this,SLOT(close()));
 	QObject::connect(detailsButton,SIGNAL(clicked()),this,SLOT(toDetail()));
 	QObject::connect(reserveButton,SIGNAL(clicked()),this,SLOT(toReserv()));
@@ -21,7 +21,7 @@ ChoiceClientDialog::~ChoiceClientDialog()
 void ChoiceClientDialog::setFilm(Film* film)
 {
 	this->film = film;
-
+	this->setWindowTitle(QString::fromUtf8(film->getName().c_str()));
 	for (int i=0;i<horaireComboBox->count();i++)
 	{
 		horaireComboBox->removeItem(0);

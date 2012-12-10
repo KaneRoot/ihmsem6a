@@ -96,7 +96,7 @@ void FrameAdmin::toDelete()
 
 	Film::delFilm(f->getId());
 	Film::save();
-
+	
 	liste->load();
 }
 

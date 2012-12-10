@@ -17,6 +17,9 @@ DetailEditWidget::DetailEditWidget(Film* f, QToolBox* toolbox, QWidget* parent):
 	this->mode = MODE_EDIT;
 	this->film=f;
 	this->toolBox = toolbox;
+	this->textEdit->setText(QString::fromUtf8(f->getName().c_str()));
+	this->te_synopsis->setText(QString::fromUtf8(f->getSynopsis().c_str()));
+
 }
 
 DetailEditWidget::~DetailEditWidget()
@@ -36,3 +39,10 @@ void DetailEditWidget::editFilm()
 {
 	film->save();
 }
+
+void DetailEditWidget::loadHoraire()
+{
+}
+
+
+

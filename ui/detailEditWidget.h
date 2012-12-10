@@ -20,6 +20,7 @@ class DetailEditWidget: public QWidget, private Ui::detailEditForm
 		~DetailEditWidget();
 		int getMode();
 	private:
+		void loadHoraire();
 		int mode;
 		Film *film;
 		QToolBox* toolBox;

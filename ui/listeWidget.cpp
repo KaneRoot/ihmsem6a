@@ -19,11 +19,11 @@ ListeWidget::~ListeWidget()
 
 void ListeWidget::clean()
 {
-	for (int i=0;i<boutons.size();i++)
+	for (unsigned int i=0;i<boutons.size();i++)
 	{
 		layout->removeWidget(boutons.at(i));
 	}
-
+	layout->update();
 	boutons.clear();
 	films.clear();
 }
@@ -36,6 +36,7 @@ void ListeWidget::switchMovies()
 void ListeWidget::load()
 {
 	clean();
+
 	cout << boutons.size() << " " << 
 		films.size() << "\n";
 
@@ -60,9 +61,9 @@ void ListeWidget::load()
 		boutons.push_back(new QButtonImproved(
 					QString::fromUtf8(it->getName().c_str()),
 					this,i));
+
 		boutons.at(boutons.size()-1)->setCheckable(
-				getMode()==MODE_ADMIN);
-	
+				getMode()==MODE_ADMIN);	
 		boutons.at(boutons.size()-1)->setVisible(true);
 		QObject::connect(boutons.at(boutons.size()-1),SIGNAL(clicked()),
 				this, SLOT(showDetail()));
@@ -112,7 +113,7 @@ vector<Film> ListeWidget::getFilmsSelect()
 
 Film* ListeWidget::getFilmSelect()
 {	
-	int i=0;
+	unsigned int i=0;
 	for (i=0;!boutons.at(i)->isChecked()&&
 			i<boutons.size();i++);
 	if (i==boutons.size())
