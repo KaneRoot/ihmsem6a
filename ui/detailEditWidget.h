@@ -7,6 +7,7 @@
 #include <QToolBox>
 
 #include "../utils/film.h"
+#include "../utils/horaire.h"
 
 #define MODE_CREATE 1125
 #define MODE_EDIT 1124
@@ -23,6 +24,7 @@ class DetailEditWidget: public QWidget, private Ui::detailEditForm
 		void loadHoraire();
 		int mode;
 		Film *film;
+		vector<QCheckBox*> checks;
 		QToolBox* toolBox;
 	private slots:
 		void saveFilm();
