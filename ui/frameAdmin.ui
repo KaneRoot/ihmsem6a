@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>840</width>
-    <height>577</height>
+    <height>668</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -25,7 +25,7 @@
      <x>0</x>
      <y>0</y>
      <width>131</width>
-     <height>591</height>
+     <height>671</height>
     </rect>
    </property>
    <property name="frameShape">
@@ -43,14 +43,14 @@
       <x>0</x>
       <y>0</y>
       <width>127</width>
-      <height>587</height>
+      <height>667</height>
      </rect>
     </property>
     <widget class="QPushButton" name="btn_ajout">
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>210</y>
+       <y>270</y>
        <width>100</width>
        <height>70</height>
       </rect>
@@ -63,7 +63,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>370</y>
+       <y>430</y>
        <width>100</width>
        <height>70</height>
       </rect>
@@ -76,7 +76,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>290</y>
+       <y>350</y>
        <width>100</width>
        <height>70</height>
       </rect>
@@ -89,7 +89,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>490</y>
+       <y>580</y>
        <width>100</width>
        <height>70</height>
       </rect>
@@ -121,7 +121,7 @@
      <property name="geometry">
       <rect>
        <x>10</x>
-       <y>100</y>
+       <y>120</y>
        <width>101</width>
        <height>71</height>
       </rect>
@@ -134,7 +134,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>460</y>
+       <y>540</y>
        <width>118</width>
        <height>3</height>
       </rect>
@@ -147,7 +147,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>180</y>
+       <y>220</y>
        <width>121</width>
        <height>16</height>
       </rect>
@@ -160,7 +160,7 @@
      <property name="geometry">
       <rect>
        <x>0</x>
-       <y>70</y>
+       <y>80</y>
        <width>121</width>
        <height>16</height>
       </rect>
@@ -177,7 +177,7 @@
      <x>130</x>
      <y>0</y>
      <width>711</width>
-     <height>581</height>
+     <height>671</height>
     </rect>
    </property>
    <property name="currentIndex">
@@ -189,7 +189,7 @@
       <x>0</x>
       <y>0</y>
       <width>701</width>
-      <height>517</height>
+      <height>607</height>
      </rect>
     </property>
     <attribute name="label">
@@ -202,7 +202,7 @@
       <x>0</x>
       <y>0</y>
       <width>701</width>
-      <height>517</height>
+      <height>607</height>
      </rect>
     </property>
     <attribute name="label">

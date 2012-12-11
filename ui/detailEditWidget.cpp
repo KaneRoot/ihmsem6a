@@ -9,6 +9,7 @@ DetailEditWidget::DetailEditWidget(QToolBox* toolbox,QWidget* parent):
 	this->film = NULL;
 	this->toolBox = toolbox;
 	loadHoraire();
+	initSignal();
 }
 
 DetailEditWidget::DetailEditWidget(Film* f, QToolBox* toolbox, QWidget* parent):
@@ -21,10 +22,19 @@ DetailEditWidget::DetailEditWidget(Film* f, QToolBox* toolbox, QWidget* parent):
 	this->textEdit->setText(QString::fromUtf8(f->getName().c_str()));
 	this->te_synopsis->setText(QString::fromUtf8(f->getSynopsis().c_str()));
 	loadHoraire();
+	initSignal();
 }
 
 DetailEditWidget::~DetailEditWidget()
 {}
+
+void DetailEditWidget::initSignal()
+{
+	QObject::connect(this->checkAll,SIGNAL(stateChanged(int/*Qt::Unchecked*/)),
+			this,SLOT(selectAll()));
+	QObject::connect(this->checkAll,SIGNAL(stateChanged(int/*Qt::Checked*/)),
+			this,SLOT(selectAll()));
+}
 
 int DetailEditWidget::getMode()
 {
@@ -54,5 +64,12 @@ void DetailEditWidget::loadHoraire()
 	scrollArea->setWidget(areaContents);
 }
 
-
+void DetailEditWidget::selectAll()
+{
+	//if (this->checkAll->checkState()==Qt::Checked)
+	for (unsigned int i=0;i<checks.size();i++)
+	{
+		checks.at(i)->setCheckState(this->checkAll->checkState());
+	}
+}
 

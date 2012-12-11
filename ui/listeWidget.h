@@ -7,6 +7,7 @@
 #include <QToolBox>
 #include <QGridLayout>
 #include <iostream>
+#include <QRect>
 
 #include "choiceClientDialog.h"
 #include "qButtonImproved.h"

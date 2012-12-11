@@ -21,6 +21,7 @@ class DetailEditWidget: public QWidget, private Ui::detailEditForm
 		~DetailEditWidget();
 		int getMode();
 	private:
+		void initSignal();
 		void loadHoraire();
 		int mode;
 		Film *film;
@@ -29,6 +30,7 @@ class DetailEditWidget: public QWidget, private Ui::detailEditForm
 	private slots:
 		void saveFilm();
 		void editFilm();
+		void selectAll();
 };
 
 #endif

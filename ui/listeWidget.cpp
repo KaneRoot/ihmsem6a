@@ -61,14 +61,14 @@ void ListeWidget::load()
 		boutons.push_back(new QButtonImproved(
 					QString::fromUtf8(it->getName().c_str()),
 					this,i));
-
+	
 		boutons.at(boutons.size()-1)->setCheckable(
 				getMode()==MODE_ADMIN);	
 		boutons.at(boutons.size()-1)->setVisible(true);
 		QObject::connect(boutons.at(boutons.size()-1),SIGNAL(clicked()),
 				this, SLOT(showDetail()));
 		boutons.at(boutons.size()-1)->resize(boutons.at(boutons.size()-1)->width(),
-				50);
+				100);
 		layout->addWidget(boutons.at(boutons.size()-1),j,i%2);
 		i++;
 		if(i%2==0)
