@@ -6,6 +6,7 @@ DetailEditWidget::DetailEditWidget(QToolBox* toolbox,QWidget* parent):
 {
 	setupUi(this);
 	this->mode = MODE_CREATE;
+	this->btnEditer->setText(QString::fromUtf8("Ajouter"));
 	this->film = NULL;
 	this->toolBox = toolbox;
 	loadHoraire();

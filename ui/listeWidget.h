@@ -24,6 +24,7 @@ class ListeWidget: public QWidget, private Ui::ListeForm
 	Q_OBJECT
 	public:
 		ListeWidget(QToolBox* toolBox,int mode,QWidget* parent=0);
+		ListeWidget(QToolBox* toolBox,int mode, int view,QWidget* parent=0);
 		~ListeWidget();
 		void load();
 		void clean();
@@ -32,6 +33,7 @@ class ListeWidget: public QWidget, private Ui::ListeForm
 		QToolBox* getToolBox();
 		vector<Film> getFilmsSelect();
 		Film* getFilmSelect();
+		int getViewMode();
 	private:
 		vector<QButtonImproved*> boutons;
 		vector<Film> films;

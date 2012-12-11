@@ -14,17 +14,41 @@ ListeWidget::ListeWidget(QToolBox* toolBox,int mode,QWidget* parent):QWidget(par
 	this->setLayout(layout);
 }
 
+ListeWidget::ListeWidget(QToolBox* toolBox,int mode, int view,QWidget* parent):
+	QWidget(parent),Ui::ListeForm()
+{
+	setupUi(this);
+	this->viewMode = view;
+	this->toolbox=toolBox;
+	this->mode=mode;
+	this->dialClient=NULL;
+	layout = new QGridLayout;
+	load();
+	this->setLayout(layout);
+}
+
+
 ListeWidget::~ListeWidget()
 {}
+
+int ListeWidget::getViewMode()
+{
+	return viewMode;
+}
 
 void ListeWidget::clean()
 {
 	for (unsigned int i=0;i<boutons.size();i++)
 	{
-		layout->removeWidget(boutons.at(i));
+	//	layout->removeWidget(boutons.at(boutons.size()-1));
+		boutons.pop_back();
+		//this->removeWidget(boutons.at(i));
 	}
-	layout->update();
+
+	this->update();
 	boutons.clear();
+	cout << layout->count() << " count \n";
+	cout << boutons.size() << " size \n";
 	films.clear();
 }
 
@@ -36,7 +60,7 @@ void ListeWidget::switchMovies()
 void ListeWidget::load()
 {
 	clean();
-
+	this->repaint();
 	cout << boutons.size() << " " << 
 		films.size() << "\n";
 
@@ -44,8 +68,7 @@ void ListeWidget::load()
 	
 	if (viewMode==MOVIES)
 	{
-		// TODO Modife vers film diffuser
-		films = Film::getFilms();
+		films = Film::getFilmsEnProjection();
 	}
 	else
 	{
@@ -76,8 +99,6 @@ void ListeWidget::load()
 			j++;
 		}
 	}
-
-//	this->setLayout(layout);
 }
 
 void ListeWidget::showDetail()

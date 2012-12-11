@@ -35,12 +35,24 @@ void FrameAdmin::toReserv()
 	}
 	ChoiceClientDialog* choice = new ChoiceClientDialog(this->toolBox,
 			this);
+	choice->setFilm(f);
 	choice->show();		
 }
 
 void FrameAdmin::switchMovies()
 {
 	liste->switchMovies();
+	liste->load();
+
+	int view = liste->getViewMode();
+	liste = new ListeWidget(toolBox,MODE_ADMIN,view,toolBox);
+
+	for (int i=0;i<this->toolBox->count();i++)
+	{
+		this->toolBox->removeItem(0);
+	}
+
+	this->toolBox->addItem(liste,QString::fromUtf8("Catalogue de film"));	
 	liste->load();
 }
 
@@ -97,6 +109,15 @@ void FrameAdmin::toDelete()
 	Film::delFilm(f->getId());
 	Film::save();
 	
+	int view = liste->getViewMode();
+	liste = new ListeWidget(toolBox,MODE_ADMIN,view,toolBox);
+
+	for (int i=0;i<this->toolBox->count();i++)
+	{
+		this->toolBox->removeItem(0);
+	}
+
+	this->toolBox->addItem(liste,QString::fromUtf8("Catalogue de film"));	
 	liste->load();
 }
 
