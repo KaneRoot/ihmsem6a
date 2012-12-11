@@ -29,9 +29,10 @@ vector<string> Horaire::getHorairesString()
 {
 	vector<int> ids = Horaire::getHorairesId();
 	vector<string> les_horaires;
-	for(size_t i(0) ; i < ids.size() ; i++)
+	vector<int>::iterator it;
+	for( it = ids.begin(); it != ids.end()  ; it++)
 	{
-		les_horaires.push_back(Horaire::getHoraire(ids.at(i)));
+		les_horaires.push_back(Horaire::getHoraire(*it));
 	}
 	return les_horaires;
 }
