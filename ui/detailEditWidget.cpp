@@ -6,6 +6,7 @@ DetailEditWidget::DetailEditWidget(QToolBox* toolbox,QWidget* parent):
 {
 	setupUi(this);
 	this->mode = MODE_CREATE;
+	this->labelTitle->setText(QString::fromUtf8("Ajout d'un nouveau film"));
 	this->btnEditer->setText(QString::fromUtf8("Ajouter"));
 	this->film = NULL;
 	this->toolBox = toolbox;
@@ -18,6 +19,7 @@ DetailEditWidget::DetailEditWidget(Film* f, QToolBox* toolbox, QWidget* parent):
 {
 	setupUi(this);
 	this->mode = MODE_EDIT;
+	this->labelTitle->setText(QString::fromUtf8("Édition"));
 	this->film=f;
 	this->toolBox = toolbox;
 	this->textEdit->setText(QString::fromUtf8(f->getName().c_str()));
