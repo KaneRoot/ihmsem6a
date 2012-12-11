@@ -4,6 +4,10 @@
 
 #include "ui_ticket.h"
 #include <QToolBox>
+#include <fstream>
+#include <iostream>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
