@@ -56,14 +56,6 @@ int DetailEditWidget::getMode()
 
 void DetailEditWidget::saveFilm()
 {
-	vector<int> horaires;
-	/*for (unsigned int i=0;i<checks.size();i++)
-	{
-		if (checks.at(i)->checkState==Qt::Checked)
-		{
-			horaires.push_back((int)i);
-		}
-	}*/
 	vector<string> actor;
 	string titre = textEdit->toPlainText().toStdString();
 	string syno = te_synopsis->toPlainText().toStdString();
@@ -74,6 +66,15 @@ void DetailEditWidget::saveFilm()
 
 void DetailEditWidget::editFilm()
 {
+	for (unsigned int i=0;i<checks.size();i++)
+	{
+		if (checks.at(i)->checkState()==Qt::Checked)
+		{
+			Planning::addHoraireFilm(film->getId(),i%3,i);
+		}
+	}
+
+
 	film->setName(textEdit->toPlainText().toStdString());
 	film->setSynopsis(te_synopsis->toPlainText().toStdString());
 	film->save();
