@@ -58,7 +58,7 @@ void FrameAdmin::switchMovies()
 
 void FrameAdmin::toEdit()
 {
-	if (!this->isEditShowed)
+	if (!this->isEditShowed || this->toolBox->count()==1)
 	{
 		Film* f = NULL;
 		f = liste->getFilmSelect();
@@ -77,7 +77,7 @@ void FrameAdmin::toEdit()
 
 void FrameAdmin::toCreate()
 {
-	if (!this->isCreateShowed)
+	if (!this->isCreateShowed || this->toolBox->count()==1)
 	{
 		detailCreate = new DetailEditWidget(this->toolBox,
 				this->toolBox);
@@ -104,7 +104,6 @@ void FrameAdmin::toDelete()
 		cout << "Mauvaise sélection\n";
 		return;
 	}
-
 	Film::delFilm(f->getId());
 	Film::save();
 	

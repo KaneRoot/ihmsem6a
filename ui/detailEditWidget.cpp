@@ -35,8 +35,18 @@ void DetailEditWidget::initSignal()
 {
 	QObject::connect(this->checkAll,SIGNAL(stateChanged(int/*Qt::Unchecked*/)),
 			this,SLOT(selectAll()));
-	QObject::connect(this->checkAll,SIGNAL(stateChanged(int/*Qt::Checked*/)),
-			this,SLOT(selectAll()));
+	QObject::connect(this->btn_back,SIGNAL(clicked()),
+			this,SLOT(closeWidget()));
+	if(this->mode==MODE_EDIT)
+	{
+		QObject::connect(this->btnEditer,SIGNAL(clicked()),
+				this,SLOT(editFilm()));
+	}
+	else
+	{
+		QObject::connect(this->btnEditer,SIGNAL(clicked()),
+				this,SLOT(saveFilm()));
+	}
 }
 
 int DetailEditWidget::getMode()
@@ -46,12 +56,28 @@ int DetailEditWidget::getMode()
 
 void DetailEditWidget::saveFilm()
 {
-	//Film::addFilm();
+	vector<int> horaires;
+	/*for (unsigned int i=0;i<checks.size();i++)
+	{
+		if (checks.at(i)->checkState==Qt::Checked)
+		{
+			horaires.push_back((int)i);
+		}
+	}*/
+	vector<string> actor;
+	string titre = textEdit->toPlainText().toStdString();
+	string syno = te_synopsis->toPlainText().toStdString();
+	Film::addFilm(titre,1,true,"1h26",syno,actor,string("Spielberg"),6);
+//	Film::save();	
+	closeWidget();
 }
 
 void DetailEditWidget::editFilm()
 {
+	film->setName(textEdit->toPlainText().toStdString());
+	film->setSynopsis(te_synopsis->toPlainText().toStdString());
 	film->save();
+	closeWidget();
 }
 
 void DetailEditWidget::loadHoraire()
@@ -91,10 +117,19 @@ void DetailEditWidget::loadHoraire()
 
 void DetailEditWidget::selectAll()
 {
-	//if (this->checkAll->checkState()==Qt::Checked)
 	for (unsigned int i=0;i<checks.size();i++)
 	{
 		checks.at(i)->setCheckState(this->checkAll->checkState());
 	}
+}
+
+void DetailEditWidget::closeWidget()
+{
+	toolBox->setCurrentIndex(0);
+	for (;toolBox->count()>1;)
+	{
+		toolBox->removeItem(1);
+	}
+	this->close();
 }
 

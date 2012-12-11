@@ -31,6 +31,7 @@ class DetailEditWidget: public QWidget, private Ui::detailEditForm
 		void saveFilm();
 		void editFilm();
 		void selectAll();
+		void closeWidget();
 };
 
 #endif
