@@ -162,9 +162,9 @@ int main(int argc, char **argv)
 	//search_films();
 	//test_planning();
 	//ajout_acteur();
-	del_film();
+	//del_film();
 	//add_film();
-	//get_horaires_ids();
-	//add_horaire_film(argc, argv);
-	//test_films_en_projection();
+	get_horaires_ids();
+	add_horaire_film(argc, argv);
+	test_films_en_projection();
 }
