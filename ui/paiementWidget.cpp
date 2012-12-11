@@ -5,6 +5,10 @@ PaiementWidget::PaiementWidget(string abo, int nbtickets,Film* f,
 		QToolBox* toolbox,QWidget* parent):QDialog(parent),Ui::paiementForm()
 {
 	setupUi(this);
+	
+	string s = string("Nom du film :")+f->getName()+
+		string("\nAbonnement :")+abo+string("\n");
+	this->textEdit->setText(QString::fromUtf8(s.c_str()));
 	this->toolBox = toolbox;
 	this->film = f;
 	this->abonnement = abo;
@@ -24,6 +28,11 @@ PaiementWidget::PaiementWidget(string abo, int nbtickets,int idfilm,
 
 	Film::init();
 	film = new Film(idfilm);
+	string s = string("Nom du film :")+film->getName()+
+		string("\nAbonnement :")+abo+string("\n");
+	this->textEdit->setText(QString::fromUtf8(s.c_str()));
+
+
 
 	QObject::connect(cancelButton,SIGNAL(clicked()),this,SLOT(close()));
 	QObject::connect(payerButton,SIGNAL(clicked()),this,SLOT(buy()));
