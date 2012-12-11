@@ -47,11 +47,11 @@ void FrameAdmin::switchMovies()
 	int view = liste->getViewMode();
 	liste = new ListeWidget(toolBox,MODE_ADMIN,view,toolBox);
 
-	for (int i=0;i<this->toolBox->count();i++)
+	for (;this->toolBox->count()>0;)
 	{
 		this->toolBox->removeItem(0);
 	}
-
+	this->isEditShowed=false;
 	this->toolBox->addItem(liste,QString::fromUtf8("Catalogue de film"));	
 	liste->load();
 }
@@ -104,7 +104,6 @@ void FrameAdmin::toDelete()
 		cout << "Mauvaise sélection\n";
 		return;
 	}
-	//cout << "film à supprimer : " << f->getName() << endl;
 
 	Film::delFilm(f->getId());
 	Film::save();
