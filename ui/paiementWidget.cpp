@@ -32,8 +32,6 @@ PaiementWidget::PaiementWidget(string abo, int nbtickets,int idfilm,
 		string("\nAbonnement :")+abo+string("\n");
 	this->textEdit->setText(QString::fromUtf8(s.c_str()));
 
-
-
 	QObject::connect(cancelButton,SIGNAL(clicked()),this,SLOT(close()));
 	QObject::connect(payerButton,SIGNAL(clicked()),this,SLOT(buy()));
 }

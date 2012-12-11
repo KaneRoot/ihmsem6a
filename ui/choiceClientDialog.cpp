@@ -67,7 +67,7 @@ void ChoiceClientDialog::toReserv()
 {
 	string abo = comboBox->itemText(comboBox->currentIndex()).toStdString();
 	PaiementWidget* paiement = new PaiementWidget(abo,
-			spinBox->value(),1,toolBox,this);
+			spinBox->value(),film,toolBox,this);
 	paiement->show();
 }
 
