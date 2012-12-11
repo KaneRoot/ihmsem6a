@@ -84,7 +84,9 @@ void DetailEditWidget::loadHoraire()
 		}
 		this->verticalLayout->addWidget(checks.at(checks.size()-1));
 	}
-//	scrollArea->setWidget(areaContents);
+	areaContents->setLayout(verticalLayout);
+	scrollArea->setWidget(areaContents);
+	scrollArea->show();
 }
 
 void DetailEditWidget::selectAll()
